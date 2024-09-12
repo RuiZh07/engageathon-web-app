@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css'; // Global styles, if any
+
+// Import your screen components
+import WelcomeScreen from './screens/WelcomeScreen/WelcomeScreen';
+import ImageSlider from './screens/OnboardingTutorials/OnboardingTutorials';
+import SignUp from './screens/SignUp/SignUp';
+import ActivityScreen from './screens/ActivityScreen/ActivityScreen';
+import CongratsScreen from './screens/CongratsScreen/CongratsScreen';
+import CollectRewardsScreen from './screens/CollectRewardsScreen/CollectRewardsScreen';
+import HomeScreen from './screens/HomeScreen/HomeScreen';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+       
+          <Routes>
+            <Route path="/" element={<WelcomeScreen />} />
+            <Route path="/image-slider" element={<ImageSlider />} />
+            <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/activity-screen" element={<ActivityScreen />} />
+            <Route path="/congrats" element={<CongratsScreen />} />
+            <Route path="/collect-rewards" element={<CollectRewardsScreen />} />
+            <Route path="/home" element={<HomeScreen />} />
+          </Routes>
+
+      </div>
+    </Router>
   );
 }
 

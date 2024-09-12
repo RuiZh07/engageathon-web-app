@@ -1,0 +1,52 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden;
+}
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.welcome-content-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  z-index: 1;
+  height: 100%;
+  padding-bottom: 30px;
+}
+    
+.welcome-text-container {
+  margin-left: 30px;
+  margin-top: 50px;
+}
+  
+.welcome-text {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 40px;
+  text-align: left;
+}
+  
+.des-text, .rewards-text {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+  text-align: left;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 15vh;
+}
+  

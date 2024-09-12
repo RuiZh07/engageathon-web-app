@@ -1,0 +1,27 @@
+.chip-container {
+  margin: 10px 0;
+}
+
+.chip-gradient {
+  background: linear-gradient(90deg, #FF8D00 72.04%, #FFBA00 86.02%, #FFE600 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  display: inline-flex; 
+}
+
+.chip-content {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chip-label {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 10px;
+  color: #F5F4F4;
+  text-transform: capitalize;
+  text-align: center;
+}
+  

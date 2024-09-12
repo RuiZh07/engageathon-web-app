@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+.container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    background-color: #1E1E1E; 
+    background-image: url("../../assets/backgroundImage.png"); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.scrollContent {
+    padding: 30px;
+}
+
+.titleContainer {
+   padding-bottom: 20px;
+   padding-top: 10px;
+   padding-right: 30px;
+}
+
+.userName {
+    font-size: 32px;
+    color: white;
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.scanQRText {
+    font-size: 16px;
+    color: #DBDBDB;
+    font-family: 'Inter';
+    text-align: left;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.rewardsEarnedText {
+    font-size: 32px;
+    color: #FFE600;
+    text-align: left;
+    margin: 0;
+}
+
+.rewardArea {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.rewardsContainer {
+    width: 44%;
+    background-color: #1E1E1E;
+    padding-left: 15px;
+    border-radius: 10px;
+    border: 1px solid #FAB81E;
+    display: flex;
+    align-items: center;
+}
+
+.badgeIcon {
+    width: 38px;
+    height: 38px;
+}
+.prizeIcon {
+    width: 45px;
+    height: 45px;
+}
+
+.pointsContainer {
+    margin-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.getPoints {
+    font-size: 18px;
+    color: #FFFFFF;
+    font-family: 'Poppins';
+    margin: 0; 
+    padding: 0;
+    text-align: left;
+}
+
+.totalPoint {
+    font-size: 16px;
+    color: #ABABAB;
+    font-family: 'Poppins';
+    margin: 0; 
+    padding: 0;
+}
+
+.activitiesText {
+    font-size: 30px;
+    color: #FFE600;
+    font-family: 'Poppins';
+    text-align: left;
+}
+
+.activityArea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.activityContainer {
+    width: 48%;
+    //height: calc(50% - 10px);
+    background-color: #1E1E1E;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #FAB81E;
+    //margin-bottom: 10;
+    box-sizing: border-box;
+    
+}
+
+.activityIconBackground {
+    background: linear-gradient(90deg, #FF8D00 0%, #FFDE1A 100%);
+    border-radius: 20%; 
+    padding: 14px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.iconsContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.arrowIcon {
+    margin-left: auto;
+}
+
+.activityNameText {
+    margin: 0;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-family: 'Poppins';
+    text-align: left;
+}
+
+.pointText {
+    margin: 0;
+    font-size: 15px;
+    color: #ABABAB;
+    font-family: 'Poppins';
+    text-align: left;
+}
+
+.modalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    background-color: #393939;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 70%;
+}
+
+.modalTitle {
+    font-size: 24px;
+    color: white;
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+}
+
+.modalMessage {
+    font-size: 18px;
+    color: #F1ECE6;
+    margin: 0;
+    padding: 0;
+}
+
+.modalButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
