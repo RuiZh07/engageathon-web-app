@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
 .chip-container {
   margin: 10px 0;
 }
@@ -17,8 +19,9 @@
 }
 
 .chip-label {
+  font-family: 'Poppins';
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 10px;
   color: #F5F4F4;
   text-transform: capitalize;

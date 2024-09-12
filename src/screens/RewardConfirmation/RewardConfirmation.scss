@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+.confirmation-content-container {
+    margin-left: 40px;
+    margin-top: 40%;
+}
+
+.greatJobContianer {
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    
+}
+
+.overviewText {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+    text-align: left;
+    font-family: 'Inter';
+    padding-right: 140px;
+}
+
+.rewardAreaConfirmation {
+    margin-top: 20px;
+    margin-bottom: 30%;
+}
+
+.rewardsContainerConfirmation {
+    width: 80%;
+    background-color: #1E1E1E;
+    padding-left: 15px;
+    border-radius: 10px;
+    border: 1px solid #FAB81E;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+.pointsContainerConfirmation {
+    margin-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

@@ -7,7 +7,7 @@ export default function CollectRewardsScreen() {
   const navigate = useNavigate();
 
   const handlePress = () => {
-    navigate('/image-slider');
+    navigate('/survey');
   };
 
   return (

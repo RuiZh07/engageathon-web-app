@@ -10,6 +10,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 export default function HomeScreen() {
     const [eventList, setEventList] = useState([]);
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
     const handleAttend = () => {
@@ -30,14 +31,19 @@ export default function HomeScreen() {
 
             } catch (error) {
                 console.error("Error fetching event list", error);
+            } finally {
+                setLoading(false);
             }
     };
-    console.log(eventList);
-    fetchEventList();
+    
+        fetchEventList();
     }, [])
+
+
     return (
         <div className='container'>
             <IconTitle />
+            {loading && <div className="loading-text">Loading...</div>}
             {eventList.map((post) => (
                 <div key={post.id} className="homePost">
                     <div className="postHeader">
@@ -52,42 +58,26 @@ export default function HomeScreen() {
                             </button>
                     </div>
 
-                
-                <div className="postTags">
-                    <Chip label="community" />
-                    <Chip label="Engageathon" />
-                </div>
-                
-                <div className="postImageContainer">
-                <img
-                    src={post.image_urls[0]?.image_url ? `data:image/jpeg;base64,${post.image_urls[0].image_url}` : ""} 
-                    className="postImage"
-                    alt="Event"
-                    />
-
-            
-                </div>
-                    {/*
-                <div className="postInteraction">
-                    <div className="likeSection">
-                    <button className="interactionButton">
-                    </button>
-                    <p className="likeCountText">{post.likes_count || 0}</p>
+                    <div className="postTags">
+                        <Chip label="community" />
+                        <Chip label="Engageathon" />
                     </div>
-
-                    <button className="interactionButton"></button>
-                    <button className="interactionButton"></button>
-                    <button className="interactionButton"></button>
-                </div>
-                */}
-
-                <div className="postDescription">
-                    <h3 className="eventTitleText">{post.name}</h3>
-                    <p className="descriptionText">{post.description}</p>
-                </div>
-                <div className='homeScreenAttenButton'>
-                    <MainButton title="Attend" onClick={handleAttend} />
-                </div>
+                
+                    <div className="postImageContainer">
+                        <img
+                            src={post.image_urls[0]?.image_url ? `data:image/jpeg;base64,${post.image_urls[0].image_url}` : ""} 
+                            className="postImage"
+                            alt="Event"
+                        />
+                    </div>
+                    
+                    <div className="postDescription">
+                        <h3 className="eventTitleText">{post.name}</h3>
+                        <p className="descriptionText">{post.description}</p>
+                    </div>
+                    <div className='homeScreenAttendButton'>
+                        <MainButton title="Attend" onClick={handleAttend} />
+                    </div>
                 </div>
             ))}
         </div>   

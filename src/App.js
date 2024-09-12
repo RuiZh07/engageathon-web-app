@@ -10,7 +10,8 @@ import ActivityScreen from './screens/ActivityScreen/ActivityScreen';
 import CongratsScreen from './screens/CongratsScreen/CongratsScreen';
 import CollectRewardsScreen from './screens/CollectRewardsScreen/CollectRewardsScreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
-
+import RewardConfirmation from './screens/RewardConfirmation/RewardConfirmation';
+import SurveyScreen from './screens/SurveyScreen/SurveyScreen';
 function App() {
   return (
     <Router>
@@ -24,6 +25,9 @@ function App() {
             <Route path="/congrats" element={<CongratsScreen />} />
             <Route path="/collect-rewards" element={<CollectRewardsScreen />} />
             <Route path="/home" element={<HomeScreen />} />
+            <Route path="/reward-confirmation" element={<RewardConfirmation />} />
+            <Route path="/survey" element={<SurveyScreen />} />
+            
           </Routes>
 
       </div>

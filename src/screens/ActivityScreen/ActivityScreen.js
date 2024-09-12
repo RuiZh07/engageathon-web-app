@@ -100,7 +100,7 @@ export default function ActivityScreen() {
   }, [location.state, activities]);
 
   useEffect(() => {
-    if (totalBadges === 10) {
+    if (totalBadges === 1) {
       setModalVisible(true);
     }
   }, [totalBadges]);
