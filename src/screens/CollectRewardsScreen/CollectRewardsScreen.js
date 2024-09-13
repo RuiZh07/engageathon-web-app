@@ -6,25 +6,19 @@ import './CollectRewardsScreen.scss';
 export default function CollectRewardsScreen() {
   const navigate = useNavigate();
 
-  const handlePress = () => {
-    navigate('/survey');
+  const handleViewAnalytics = () => {
+    navigate('/metrics');
   };
 
   return (
-    <div className="collect-container">
-      <img
-        src={require('../../assets/backgroundImage.png')}
-        alt="Background"
-        className="backgroundImage"
-      />
-
+    <div className="container">
       <div className="collectTextContainer">
         <h1 className="collectText">Collect Your<br />Rewards!</h1>
-        <p className="desText">Scan one final QR code to<br />confirm your rewards</p>
+        <p className="desText">Show your analytics to any<br /> vendor to claim your reward.</p>
       </div>
 
       <div className="button-container">
-        <MainButton title="Scan QR Code" onClick={handlePress} />
+        <MainButton title="View Your Analytics" onClick={handleViewAnalytics} />
       </div>
     </div>
   );
