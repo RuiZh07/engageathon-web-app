@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap');
 
-.container {
+.sign-up-screen-container {
+    display: flex;
     position: relative;
+    flex-direction: column;
     height: 100vh;
     width: 100%;
     overflow-y: auto;
@@ -15,9 +17,11 @@
 .form-container {
     position: relative;
     display: flex;
+    justify-content: flex-end;
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
+    flex-grow: 1;
 }
 
 .sign-up-container {
@@ -25,19 +29,22 @@
     flex-direction: column;
     margin-top: 70px;
     margin-left: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     margin-right: 20px;
     padding: 40px 25px;
     background-color: #2e2e2e;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
 }
 
 .begin-text {
     color: #FFFFFF;
     font-family: 'Poppins';
-    font-size: 37px;
+    font-weight: 600;
+    font-size: 34px;
     text-align: left;
+    line-height: 31px;
     margin: 0;
 }
 
@@ -66,10 +73,6 @@
     color: #ABABAB;
     background: transparent;
     border: none;
-}
-
-.icon {
-
 }
 
 .continue-button-container {

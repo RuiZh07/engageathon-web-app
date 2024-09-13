@@ -30,7 +30,7 @@ export default function SignUp() {
         }
 
         try {
-            const response = await fetch("http://app.engageathon.com/api/auth/userlogin/temp/", {
+            const response = await fetch("https://app.engageathon.com/api/auth/userlogin/temp/", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ export default function SignUp() {
     };
 
     return (
-        <div className="container">
+        <div className="sign-up-screen-container">
             <div className="background-image" />
             <div className="form-container">
                 <IconTitle />
