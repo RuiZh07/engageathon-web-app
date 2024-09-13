@@ -7,7 +7,7 @@ export default function SurveryScreen() {
     const navigate = useNavigate();
 
     const handlePress = () => {
-        navigate('congratulations'); 
+        navigate('/congratulations'); 
     };
 
   return (
@@ -30,7 +30,7 @@ export default function SurveryScreen() {
         {/*
         <button class="skipButton" onClick={handlePress}>Skip</button>
         */}
-        
+
     </div>
   );
 }
