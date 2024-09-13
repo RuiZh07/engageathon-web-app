@@ -1,0 +1,52 @@
+
+.continueJourneyText {
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 35px;
+    text-align: left;
+    color: #FFFFFF;
+    padding-top: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
+
+.moveOnText {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #FFFFFF;
+    margin-bottom: 280px;
+
+}
+.goBackButton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+
+}
+.orText {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 16.94px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 10px 0;
+}
+.finishEngagingButton {
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 600;
+    color: #CDCDCD;
+    border: none;
+    background-color: transparent;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
