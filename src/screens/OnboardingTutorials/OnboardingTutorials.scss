@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: row;
     position: absolute;
-    bottom: 10vh;
+    bottom: 8vh;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -58,7 +58,7 @@
     width: 90%;
     display: flex;
     justify-content: space-between;
-    padding: 0 25px;
+    padding: 0 20px;
 }
 
 .skip-button,
@@ -80,17 +80,16 @@
 .next-button-text,
 .get-started-button-text {
     font-family: 'Poppins';
+    font-weight: 600;
     font-size: 20px;
 }
 
 .skip-button-text {
-    color: #ffffff;
-    font-weight: 400;
+    color: #CFCFCF;
 }
 
 .next-button-text {
-    color: #ffffff;
-    font-weight: 400;
+    color: #CFCFCF;
 }
 
 .get-started-button-text {
