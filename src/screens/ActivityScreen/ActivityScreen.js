@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ActivityScreen.scss';
-import { useNavigate, useParams } from 'react-router-dom'; 
+import { useNavigate} from 'react-router-dom'; 
 import MainButton from '../../components/MainButton/MainButton';
 import { useLocation } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa6";
@@ -32,8 +32,19 @@ export default function ActivityScreen() {
   const [isCameraOpen, setIsCameraOpen] = useState(false);
   const [activeActivity, setActiveActivity] = useState({});
 
+  const firstColumn = [];
+  const secondColumn = [];
+
   const location = useLocation();
   const navigate = useNavigate();
+
+  for (let i = 0; i < activities.length; i++) {
+    if (i % 2 === 0) {
+      firstColumn.push(activities[i]);  
+    } else {
+      secondColumn.push(activities[i]);
+    }
+  }
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -52,7 +63,6 @@ export default function ActivityScreen() {
 
     fetchUserData();
   }, []);
-
 
   const fetchActivities = async (email) => {
     try {
@@ -90,7 +100,6 @@ export default function ActivityScreen() {
     }
   }, [isCameraOpen]);
   
-
   useEffect(() => {
     if (location.state && location.state.completedActivityId) {
       const { completedActivityId } = location.state;
@@ -214,82 +223,163 @@ export default function ActivityScreen() {
         <p className="activitiesText">Activities</p>
 
         <div className="activityArea">  
-          {activities.map((activity) => (
-            <button key={activity.id} className="activityContainer" onClick={() => handleActivityPress(activity)}>
-                <div className="iconsContainer">
-                    {activity.activity_name === "Beverage Station" && (
-                        <div className="activityIconBackground">
-                            <img src={WineBar} className="activityIcons" alt="Beverage Station" />
-                        </div>
-                    )}
-                    {activity.activity_name === "Food Station" && (
-                        <div className="activityIconBackground">
-                            <img src={lunchDining} className="activityIcons" alt="Food Station" />
-                        </div>
-                    )}
-                    {activity.activity_name === "Photo Booth" && (
-                        <div className="activityIconBackground">
-                            <img src={addPhoto} className="activityIcons" alt="Photo Booth" />
-                        </div>
-                    )}
-                    {activity.activity_name === "Feature Station" && (
-                        <div className="activityIconBackground">
-                            <img src={awardStar} className="activityIcons" alt="Feature Station" />
-                        </div>
-                    )}
-                    {activity.activity_name === "Photo at LED Screen" && (
-                        <div className="activityIconBackground">
-                            <img src={photoFrame} className="activityIcons" alt="Photo at LED Screen" />
-                        </div>
-                    )}
-                    {activity.activity_name === "Say Hi to the DJ" && (
-                        <div className="activityIconBackground">
-                            <img src={genres} className="activityIcons" alt="Say Hi to the DJ" />
-                        </div>
-                    )}
-                    {activity.activity_name === "Snapshot with Veniece" && (
-                        <div className="activityIconBackground">
-                            <img src={phoneCamera} className="activityIcons" alt="Take a quick snapshot with Veniece" />
-                        </div>
-                    )}
-                    {activity.activity_name === "Interview with onsite camera crew" && (
-                        <div className="activityIconBackground">
-                            <img src={videoFront} className="activityIcons" alt="Interview with Onsite Camera Crew" />
-                        </div>
-                    )}
-                    {activity.activity_name === "Photo at step/repeat banner" && (
-                        <div className="activityIconBackground">
-                            <img src={photoCameraFront} className="activityIcons" alt="Take a photo at Step Banner" />
-                        </div>
-                    )}
-                    {activity.activity_name === "Hidden Activity" && (
-                        <div className="activityIconBackground">
-                            <img src={mystery} className="activityIconsMystery" alt="Mystery Event" />
-                        </div>
-                    )}
-                    {activity.confirmed ? (
-                        <TbRosetteDiscountCheckFilled 
-                          size={28} 
-                          color="#32a852" 
-                          className="arrowIcon" 
-                        />
-                    ) : (
-                        <FaArrowRight 
-                          size={20} 
-                          color="#FFFFFF" 
-                          className="arrowIcon" 
-                        />
-                    )}
-                  </div>
+          <div className="activityColumn">
+            {firstColumn.map((activity) => (
+              <button key={activity.id} className="activityContainer" onClick={() => handleActivityPress(activity)}>
+                  <div className="iconsContainer">
+                      {activity.activity_name === "Beverage Station" && (
+                          <div className="activityIconBackground">
+                              <img src={WineBar} className="activityIcons" alt="Beverage Station" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Food Station" && (
+                          <div className="activityIconBackground">
+                              <img src={lunchDining} className="activityIcons" alt="Food Station" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Photo Booth" && (
+                          <div className="activityIconBackground">
+                              <img src={addPhoto} className="activityIcons" alt="Photo Booth" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Feature Station" && (
+                          <div className="activityIconBackground">
+                              <img src={awardStar} className="activityIcons" alt="Feature Station" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Photo at LED Screen" && (
+                          <div className="activityIconBackground">
+                              <img src={photoFrame} className="activityIcons" alt="Photo at LED Screen" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Say Hi to the DJ" && (
+                          <div className="activityIconBackground">
+                              <img src={genres} className="activityIcons" alt="Say Hi to the DJ" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Snapshot with Veniece" && (
+                          <div className="activityIconBackground">
+                              <img src={phoneCamera} className="activityIcons" alt="Take a quick snapshot with Veniece" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Interview with onsite camera crew" && (
+                          <div className="activityIconBackground">
+                              <img src={videoFront} className="activityIcons" alt="Interview with Onsite Camera Crew" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Photo at step/repeat banner" && (
+                          <div className="activityIconBackground">
+                              <img src={photoCameraFront} className="activityIcons" alt="Take a photo at Step Banner" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Hidden Activity" && (
+                          <div className="activityIconBackground">
+                              <img src={mystery} className="activityIconsMystery" alt="Mystery Event" />
+                          </div>
+                      )}
+                      {activity.confirmed ? (
+                          <TbRosetteDiscountCheckFilled 
+                            size={28} 
+                            color="#32a852" 
+                            className="arrowIcon" 
+                          />
+                      ) : (
+                          <FaArrowRight 
+                            size={20} 
+                            color="#FFFFFF" 
+                            className="arrowIcon" 
+                          />
+                      )}
+                    </div>
 
-                  <p className="activityNameText">{activity.activity_name}</p>
-                  <p className="pointText">
-                    {activity.confirmed 
-                      ? "Points Claimed" 
-                      : `${activity.activity_points} Points`}
-                  </p>
-            </button>
-          ))}
+                    <p className="activityNameText">{activity.activity_name}</p>
+                    <p className="pointText">
+                      {activity.confirmed 
+                        ? "Points Claimed" 
+                        : `${activity.activity_points} Points`}
+                    </p>
+              </button>
+            ))}
+          </div>
+            
+          <div className="activityColumn">
+            {secondColumn.map((activity) => (
+              <button key={activity.id} className="activityContainer" onClick={() => handleActivityPress(activity)}>
+                  <div className="iconsContainer">
+                      {activity.activity_name === "Beverage Station" && (
+                          <div className="activityIconBackground">
+                              <img src={WineBar} className="activityIcons" alt="Beverage Station" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Food Station" && (
+                          <div className="activityIconBackground">
+                              <img src={lunchDining} className="activityIcons" alt="Food Station" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Photo Booth" && (
+                          <div className="activityIconBackground">
+                              <img src={addPhoto} className="activityIcons" alt="Photo Booth" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Feature Station" && (
+                          <div className="activityIconBackground">
+                              <img src={awardStar} className="activityIcons" alt="Feature Station" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Photo at LED Screen" && (
+                          <div className="activityIconBackground">
+                              <img src={photoFrame} className="activityIcons" alt="Photo at LED Screen" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Say Hi to the DJ" && (
+                          <div className="activityIconBackground">
+                              <img src={genres} className="activityIcons" alt="Say Hi to the DJ" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Snapshot with Veniece" && (
+                          <div className="activityIconBackground">
+                              <img src={phoneCamera} className="activityIcons" alt="Take a quick snapshot with Veniece" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Interview with onsite camera crew" && (
+                          <div className="activityIconBackground">
+                              <img src={videoFront} className="activityIcons" alt="Interview with Onsite Camera Crew" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Photo at step/repeat banner" && (
+                          <div className="activityIconBackground">
+                              <img src={photoCameraFront} className="activityIcons" alt="Take a photo at Step Banner" />
+                          </div>
+                      )}
+                      {activity.activity_name === "Hidden Activity" && (
+                          <div className="activityIconBackground">
+                              <img src={mystery} className="activityIconsMystery" alt="Mystery Event" />
+                          </div>
+                      )}
+                      {activity.confirmed ? (
+                          <TbRosetteDiscountCheckFilled 
+                            size={28} 
+                            color="#32a852" 
+                            className="arrowIcon" 
+                          />
+                      ) : (
+                          <FaArrowRight 
+                            size={20} 
+                            color="#FFFFFF" 
+                            className="arrowIcon" 
+                          />
+                      )}
+                    </div>
+
+                    <p className="activityNameText">{activity.activity_name}</p>
+                    <p className="pointText">
+                      {activity.confirmed 
+                        ? "Points Claimed" 
+                        : `${activity.activity_points} Points`}
+                    </p>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
