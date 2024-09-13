@@ -72,7 +72,7 @@ export default function MetricsScreen() {
     <div className="container">
         <div className='metricsContainer'>
             <div className="metricsHeaderContainer">
-                <IoChevronBack className="backIcon" />
+                {/*<IoChevronBack className="backIcon" />*/}
                 <h3 className="analyticsText">Analytics</h3>
                 <button className="finishEngaging" onClick={handleFinish}>Finish Engaging</button>
             </div>

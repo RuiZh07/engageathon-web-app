@@ -264,7 +264,7 @@ export default function ActivityScreen() {
                     )}
                     {activity.activity_name === "Hidden Activity" && (
                         <div className="activityIconBackground">
-                            <img src={mystery} className="activityIcons" alt="Mystery Event" />
+                            <img src={mystery} className="activityIconsMystery" alt="Mystery Event" />
                         </div>
                     )}
                     {activity.confirmed ? (
