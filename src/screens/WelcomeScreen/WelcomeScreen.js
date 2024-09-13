@@ -14,15 +14,14 @@ export default function WelcomeScreen() {
   return (
     <div className="container">
         <div className="welcome-content-container">
-            <IconTitle />
-        
-            <div className="welcome-text-container">
-                <h1 className="welcome-text">Let's Begin to<br />Engage!</h1>
-                <div style={{ marginTop: '20px' }}>
-                    <p className="des-text">Earn Points, Get Badges.</p>
-                    <p className="rewards-text">Redeem Rewards</p>
-                 </div>
-            </div>
+          <IconTitle />
+          <div className="welcome-text-container">
+            <h1 className="welcome-text">Let's Begin to<br />Engage!</h1>
+            <div style={{ marginTop: '20px' }}>
+              <p className="des-text">Earn Points, Get Badges.</p>
+              <p className="rewards-text">Redeem Rewards</p>
+              </div>
+          </div>
         </div>
         <div className="button-container">
             <MainButton title="Start Engaging!" onClick={handlePress} />
