@@ -38,13 +38,19 @@ export default function HomeScreen() {
         fetchEventList();
     }, []);
 
+    const sortedEventList = eventList.sort((a, b) => {
+        const hasActivityA = a.activities && a.activities.length > 0;
+        const hasActivityB = b.activities && b.activities.length > 0;
+        return (hasActivityB ? 1 : 0) - (hasActivityA ? 1 : 0);
+    });
+
     return (
         <div className='container'>
             <div className="icon-title">
                 <IconTitle />
             </div>
             {loading && <div className="loading-text">Loading...</div>}
-            {eventList.map((post) => {
+            {sortedEventList.map((post) => {
                 const hasActivity = post.activities && post.activities.length > 0;
                 return (
                     <div key={post.id} className={`homePost ${!hasActivity ? 'inactive' : ''}`}>

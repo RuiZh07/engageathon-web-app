@@ -1,31 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap');
 
-.container {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow-y: auto;
-    background-color: #1E1E1E; 
-    background-image: url("../../assets/backgroundImage.png"); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-}
-
 .scrollContent {
     padding: 30px;
 }
 
 .titleContainer {
-   padding-bottom: 20px;
-   padding-top: 10px;
-   padding-right: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-right: 10px;
 }
 
 .userName {
     font-size: 32px;
     color: white;
     font-family: 'Poppins';
+    font-weight: 600;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -38,6 +30,7 @@
     text-align: left;
     margin: 0;
     padding-top: 10px;
+    padding-bottom: 30px;
 }
 
 .rewardsEarnedText {
@@ -106,19 +99,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 10px;
 }
 
 .activityContainer {
     width: 48%;
-    //height: calc(50% - 10px);
+    height: calc(50% - 10px);
     background-color: #1E1E1E;
     padding: 15px;
     border-radius: 10px;
     border: 1px solid #FAB81E;
-    //margin-bottom: 10;
+    margin-bottom: 10px;
     box-sizing: border-box;
-    
 }
 
 .activityIconBackground {

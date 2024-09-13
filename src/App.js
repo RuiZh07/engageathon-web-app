@@ -12,6 +12,9 @@ import CollectRewardsScreen from './screens/CollectRewardsScreen/CollectRewardsS
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import RewardConfirmation from './screens/RewardConfirmation/RewardConfirmation';
 import SurveyScreen from './screens/SurveyScreen/SurveyScreen';
+import MetricsScreen from './screens/Metrics/MetricsScreen';
+import JourneyChoiceScreen from './screens/JourneyChoiceScreen/JourneyChoiceScreen';
+import ThankYou from './screens/ThankYou/ThankYou';
 function App() {
   return (
     <Router>
@@ -22,11 +25,14 @@ function App() {
             <Route path="/image-slider" element={<ImageSlider />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/activity-screen" element={<ActivityScreen />} />
-            <Route path="/congrats" element={<CongratsScreen />} />
+            <Route path="/congrats-activity" element={<CongratsScreen />} />
             <Route path="/collect-rewards" element={<CollectRewardsScreen />} />
             <Route path="/home" element={<HomeScreen />} />
             <Route path="/reward-confirmation" element={<RewardConfirmation />} />
+            <Route path="/metrics" element={<MetricsScreen />} />
             <Route path="/survey" element={<SurveyScreen />} />
+            <Route path="/congratulations" element={<ThankYou />} />
+            <Route path="/journey-choice" element={<JourneyChoiceScreen />} />
             
           </Routes>
 

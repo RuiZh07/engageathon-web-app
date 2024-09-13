@@ -17,16 +17,20 @@ import photoFrame from '../../assets/icons/photo_frame.png';
 import phoneCamera from '../../assets/icons/smartphone_camera.png';
 import videoFront from '../../assets/icons/video_camera_front.png';
 import mystery from '../../assets/icons/question.png';
+import QRScanner from "../../components/QRScanner/QRScanner";
 
 export default function ActivityScreen() {
   const [userName, setUserName] = useState('');
   const [activities, setActivities] = useState([]);
-  const [completedActivityId, setCompletedActivityId] = useState(null);
+  const [completedActivityID, setCompletedActivityID] = useState(null);
   const [totalPoints, setTotalPoints] = useState(0);
   const [totalBadges, setTotalBadges] = useState(0);
   const [unconfirmedCount, setUnconfirmedCount] = useState(0);
   const [totalPossiblePoints, setTotalPossiblePoints] = useState(0);
   const [isModalVisible, setModalVisible] = useState(false);
+
+  const [isCameraOpen, setIsCameraOpen] = useState(false);
+  const [activeActivity, setActiveActivity] = useState({});
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -57,17 +61,20 @@ export default function ActivityScreen() {
         return;
       }
 
-      const response = await fetch(`http://app.engageathon.com/api/events/activity/87/${email}/`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await fetch(
+        `https://app.engageathon.com/api/events/activity/87/${email}/`, 
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
 
       const data = await response.json();
       console.log(data);
       setActivities(data.activities || []);
-      setTotalPoints(data.accmulated_points || 0);
+      setTotalPoints(data.accumulated_points || 0);
       setTotalBadges(data.confirmed_count || 0);
       setUnconfirmedCount(data.unconfirmed_count || 0);
       setTotalPossiblePoints(data.total_possible_points || 0);
@@ -77,30 +84,35 @@ export default function ActivityScreen() {
     }
   };
 
-  useEffect(()=> {
-  }, []);
+  useEffect(() => {
+    if (!isCameraOpen) {
+      setActiveActivity({});
+    }
+  }, [isCameraOpen]);
   
 
   useEffect(() => {
     if (location.state && location.state.completedActivityId) {
       const { completedActivityId } = location.state;
-      setCompletedActivityId(completedActivityId);
+      setCompletedActivityID(completedActivityId);
 
-      const completedActivity = activities.find(activity => activity.id === completedActivityId);
-
+      const completedActivity = activities.find(
+        (activity) => activity.id === completedActivityId
+      );
       if (completedActivity && !completedActivity.confirmed) {
-        const updatedActivities = activities.map(activity =>
-          activity.id === completedActivity.id ? { ...activity, confirmed: true } : activity
+        const updatedActivities = activities.map((activity) =>
+          activity.id === completedActivity.id
+            ? { ...activity, confirmed: true }
+            : activity
         );
         setActivities(updatedActivities);
-        setTotalPoints(prevPoints => prevPoints + completedActivity.activity_points);
-        setTotalBadges(prevBadges => prevBadges + 1);
       }
     }
   }, [location.state, activities]);
 
+
   useEffect(() => {
-    if (totalBadges === 1) {
+    if (totalBadges === 10) {
       setModalVisible(true);
     }
   }, [totalBadges]);
@@ -110,11 +122,66 @@ export default function ActivityScreen() {
     setModalVisible(false);
   };
 
+  const handleFinishEngaging = () => {
+    navigate("/journey-choice");
+  };
+
   const handleActivityPress = (activity) => {
     if (!activity.confirmed) {
-      navigate('/congrats', { state: { activityId: activity.id, badgeName: activity.badge, activityPoints: activity.activity_points } });
+      // navigate("/congrats", {
+      //   state: {
+      //     activityId: activity.id,
+      //     badgeName: activity.badge,
+      //     activityPoints: activity.activity_points,
+      //   },
+      // });
+      setIsCameraOpen(true);
+      setActiveActivity(activity);
     } else {
-      alert('Already Completed', 'This activity has already been completed.');
+      alert("Already Completed", "This activity has already been completed.");
+    }
+  };
+
+  const setActivityConfirmed = async (token) => {
+    const userData = localStorage.getItem("userData");
+    if (userData) {
+      const { email } = JSON.parse(userData);
+      try {
+        const response = await fetch(
+          `https://app.engageathon.com/api/events/activity/scan/87/${activeActivity?.activity}/`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              token: token,
+              email: email,
+            }),
+          }
+        );
+
+        const result = await response.json();
+
+        if (response.ok) {
+          navigate("/congrats-activity", {
+            state: {
+              activityId: activeActivity.id,
+              badgeName: activeActivity.badge,
+              activityPoints: activeActivity.activity_points,
+            },
+          });
+        } else {
+          alert(
+            result.error ||
+              "An error occurred. Please check your network connection."
+          );
+        }
+      } catch (error) {
+        alert("An error occurred. Please check your network connection.");
+      }
+    } else {
+      alert("An error occurred. Please check your network connection.");
     }
   };
 
@@ -123,8 +190,9 @@ export default function ActivityScreen() {
       <div className="scrollContent">
         <div className="titleContainer">
           <p className="userName">Hi, {userName}</p>
-          <p className="scanQRText">Scan the QR code at each station to earn points and badges</p>
+          <button className="finishEngaging" onClick={handleFinishEngaging}>Finish Engaging</button>
         </div>
+          <p className="scanQRText">Scan the QR code at each station to <br/> earn points and badges</p>
 
         <p className="rewardsEarnedText">Rewards Earned</p>
         <div className="rewardArea">
@@ -200,15 +268,25 @@ export default function ActivityScreen() {
                         </div>
                     )}
                     {activity.confirmed ? (
-                        <TbRosetteDiscountCheckFilled size={28} color="#32a852" className="arrowIcon" />
+                        <TbRosetteDiscountCheckFilled 
+                          size={28} 
+                          color="#32a852" 
+                          className="arrowIcon" 
+                        />
                     ) : (
-                        <FaArrowRight size={20} color="#FFFFFF" className="arrowIcon" />
+                        <FaArrowRight 
+                          size={20} 
+                          color="#FFFFFF" 
+                          className="arrowIcon" 
+                        />
                     )}
                   </div>
 
                   <p className="activityNameText">{activity.activity_name}</p>
                   <p className="pointText">
-                    {activity.confirmed ? "Points Claimed" : `${activity.activity_points} Points`}
+                    {activity.confirmed 
+                      ? "Points Claimed" 
+                      : `${activity.activity_points} Points`}
                   </p>
             </button>
           ))}
@@ -219,12 +297,20 @@ export default function ActivityScreen() {
         <div className="modalContainer">
           <div className="modalContent">
             <p className="modalTitle">Congratulations!</p>
-            <p className="modalMessage">You have completed all the activities!</p>
+            <p className="modalMessage">
+              You have completed all the activities!
+            </p>
             <div className="modalButtonContainer">
-                <MainButton title="Continue" onClick={handleContinue} />
+              <MainButton title="Continue" onClick={handleContinue} />
             </div>
           </div>
         </div>
+      )}
+      {isCameraOpen && (
+        <QRScanner
+          setActivityConfirmed={setActivityConfirmed}
+          setIsCameraOpen={setIsCameraOpen}
+        />
       )}
     </div>
   );

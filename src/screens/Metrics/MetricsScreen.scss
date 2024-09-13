@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;700&display=swap');
+.metricsContainer {
+    padding: 20px 30px;
+}
+
+.metricsHeaderContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    //padding: 20px 10px
+}
+
+.backIcon {
+    font-size: 34px;
+    color: white;
+    //background: linear-gradient(180deg, #FF8D00 0%, #FFDE1A 100%);
+}
+.analyticsText {
+    color: rgba(255, 222, 26, 1);
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 27px;
+    padding-left: 10px;
+    margin-right: 50px;
+}
+.finishEngaging {
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px 20px;
+    background-color: rgba(82, 82, 82, 1);
+    color: rgba(225, 225, 225, 1);
+
+}
+
+.praticipatedUsersContainer {
+    width: 95%;
+    background-color: rgba(255, 255, 255, 1);
+    padding-left: 15px;
+    border-radius: 20px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.circularProgressContainer {
+    width: 95%;
+    background-color: rgba(255, 255, 255, 1);
+    padding-left: 15px;
+    border-radius: 20px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Poppins";
+    font-weight: 500;
+    padding: 10px;
+}
+.youActivityText {
+    font-family: "Poppins";
+
+}
+.circularProgress {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.completeIncomplete {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.participatedUsers {
+    margin-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.totalUsers {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+    color: #FF8D00;
+    margin: 0; 
+    padding: 0;
+}
+.personIconContainer {
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 10px;
+    opacity: 0px;
+    background: #FFD39D;
+}
+
+.personIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.participatedText {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+    color: #000000;
+    margin: 0; 
+    padding: 0;
+}
+
+.overallText {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.activityRankingList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    margin-Right: 20px;
+}
+.activityItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+.activityIcon {
+    filter: brightness(0) invert(1);
+    width: 25px;
+}
+.activityIconMystery {
+    filter: brightness(0) invert(1);
+    width: 15px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+.verticalLine {
+    position: absolute;
+    left: 40px; 
+    top: 0;
+    bottom: 0;
+    width: 1px; 
+    background-color: #7e7e7e; 
+    margin: 0;
+    height: calc(100% - 20px);
+}
+
+.completedCount {
+    height: 40px;
+    line-height: 20px; 
+    color: #fff;
+    padding: 0 10px;
+    border-radius: 5px;
+    text-align: left;
+    background: #E9E9E9; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 30px;
+}
+.completedCountPercent {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    color: #FFFFFF;
+    //padding-left: 10px;
+}
+
+.completedCountPercentOutside {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #FFFFFF;
+    position: absolute;
+    transform: translateX(30px);
+    //left: 95px; 
+}
+
+.rewardAreaMetrics {
+    margin-top: 20px;
+    margin-bottom: 30%;
+}
+
+.rewardsContainerMetrics {
+    width: 95%;
+    background-color: #1E1E1E;
+    padding-left: 15px;
+    border-radius: 10px;
+    border: 1px solid #FAB81E;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+.pointsContainerMetrics {
+    margin-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.getPoints {
+    font-size: 18px;
+    color: #FFFFFF;
+    font-family: 'Poppins';
+    margin: 0; 
+    padding: 0;
+    text-align: left;
+}
+
+.totalPoint {
+    font-size: 16px;
+    color: #ABABAB;
+    font-family: 'Poppins';
+    margin: 0; 
+    padding: 0;
+}

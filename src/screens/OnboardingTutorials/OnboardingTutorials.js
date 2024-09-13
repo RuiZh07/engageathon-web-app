@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
-import './OnboardingTutorials.scss'; // Import the SCSS file for styling
+import './OnboardingTutorials.scss'; 
 
 import onboarding1 from '../../assets/splashScreens/onboarding_1.png';
 import onboarding2 from '../../assets/splashScreens/onboarding_2.png';
@@ -15,7 +15,7 @@ export default function ImageSlider() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleGetStartedButton = () => {
-        navigate('/sign-up'); // Route path for navigation
+        navigate('/sign-up');
     };
 
 

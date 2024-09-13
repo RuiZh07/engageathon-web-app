@@ -1,26 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap');
 
-.congrats-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.background-image {
-  background-image: url("../../assets/backgroundImage.png");
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
 .congratulationsText {
   font-size: 28px;
   line-height: 60px; 
@@ -30,7 +9,6 @@
   font-family: 'Poppins';
   margin-bottom: 10px;
 }
-
 
 .pointsName {
   margin:0;
@@ -43,22 +21,18 @@
 }
 
 .prizeImage {
-  margin-top: 20px;
+  margin-top: 30px;
   text-align: center;
 }
 
 .prizeImageContent {
-  width: 100%; 
+  width: 80%; 
 }
 
 .badgeNameText {
   color: #FAB81E;
   font-size: 30px;
   text-align: center;
-}
-
-.buttonContainer {
-  margin-top: auto;
-  margin-bottom: 20px; 
+  margin-bottom: 70px;
 }
 

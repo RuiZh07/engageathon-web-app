@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import { MdOutlinePersonOutline, MdMailOutline } from 'react-icons/md';
-import backgroundImage from '../../assets/backgroundImage.png';
 import IconTitle from '../../components/IconTitle/IconTitle';
 import MainButton from '../../components/MainButton/MainButton';
 import './SignUp.scss'; 
@@ -10,7 +9,6 @@ export default function SignUp() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
-    const [errorMessage, setErrorMessage] = useState({});
     const navigate = useNavigate();
 
     const isValidEmail = (email) => {

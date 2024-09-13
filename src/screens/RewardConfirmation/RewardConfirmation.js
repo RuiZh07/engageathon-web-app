@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import './RewardConfirmation.scss';
-import backgroundImage from '../../assets/backgroundImage.png';
-import IconTitle from '../../components/IconTitle/IconTitle';
 import MainButton from '../../components/MainButton/MainButton';
 import prize from '../../assets/prizes/prize.png';
 import starBadge from '../../assets/prizes/star-badge.png';
@@ -34,11 +32,6 @@ export default function RewardConfirmation() {
 
   return (
     <div className="container">
-        <img
-            src={backgroundImage}
-            alt="Background"
-            className="background-image"
-        />
         <div className="confirmation-content-container">
             <div className="greatJobContainer">
                 <h1 className="welcome-text">Great Job<br />{userName}!</h1>
