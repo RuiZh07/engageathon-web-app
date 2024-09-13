@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap');
 
+.feedbackContentContainer {
+    margin-top: 30%;
+    margin-left: 40px;
+}
+
 .feedbackContainer {
     margin-top: 30px;
     border: 2px solid #D6D6D6;
@@ -9,8 +14,6 @@
     margin-right: 30px;
     margin-bottom: 150px;
     width: 90%; 
-    height: 100%; 
-
 }
 
 .feedbackInput {
@@ -27,15 +30,28 @@
     padding-left: 10px;
     padding-bottom: 130px;
     background-color: transparent;
-    border-radius: 20px; 
+    border-radius: 18px; 
 }
 
-.submitButtonContainer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: auto;
+.rateText {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 40px;
+    text-align: left;
+    font-family: 'Poppins';
+    line-height: 40px;
 }
+
+.shareText {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+    text-align: left;
+    font-family: 'Inter';
+    padding-right: 140px;
+}
+
 .skipButton {
     font-family: 'Poppins';
     font-size: 18px;
@@ -44,4 +60,5 @@
     border: none;
     background-color: transparent;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
