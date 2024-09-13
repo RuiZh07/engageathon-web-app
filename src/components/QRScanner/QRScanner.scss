@@ -1,0 +1,30 @@
+.videoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+
+    .backIcon {
+        position: fixed;
+        z-index: 1009;
+        top: 20px;
+        left: 20px;
+    }
+
+    .qrVideo {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+  
+  .scannedText {
+    word-wrap: break-word;
+  }
+  
