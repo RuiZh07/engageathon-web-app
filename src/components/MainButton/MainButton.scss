@@ -8,8 +8,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 35px;
-  transition: background 0.3s ease;
 
   &:hover {
     background: linear-gradient(90deg, #FFDE1A 0%, #FF8D00 100%);
