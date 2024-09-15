@@ -13,33 +13,47 @@ const CameraCapture = ({ setIsCameraCaptureOpen, setIsCameraOpen }) => {
 
   useEffect(() => {
     const video = videoElementRef.current;
-
+  
     const startCamera = async () => {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({ video: true });
         if (video) {
+          if (video.srcObject) {
+            const previousStream = video.srcObject;
+            const tracks = previousStream.getTracks();
+            tracks.forEach(track => track.stop());
+          }
+  
           video.srcObject = stream;
-          video.play();
+
+          video.play().catch((error) => {
+            if (error.name === 'AbortError') {
+              console.warn('Play request was interrupted:', error);
+            } else {
+              console.error('Error playing video:', error);
+            }
+          });
+  
           setIsCameraCaptureOpen(true);
         }
-        
       } catch (error) {
         console.error('Error accessing camera:', error);
         setIsPermissionGranted(false);
       }
     };
-
+  
     startCamera();
-
+  
     return () => {
       if (video && video.srcObject) {
         const stream = video.srcObject;
         const tracks = stream.getTracks();
-        tracks.forEach((track) => track.stop());
+        tracks.forEach(track => track.stop());
         video.srcObject = null;
       }
     };
   }, [setIsCameraCaptureOpen, setIsPermissionGranted]);
+  
 
   const takePhoto = async () => {
     if (videoElementRef.current && canvasRef.current) {
