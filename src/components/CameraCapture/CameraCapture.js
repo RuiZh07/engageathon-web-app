@@ -15,17 +15,20 @@ const CameraCapture = ({ setIsCameraCaptureOpen, setIsCameraOpen }) => {
     const video = videoElementRef.current;
   
     const startCamera = async () => {
+      if (!video) return;
+      
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        if (video) {
-          if (video.srcObject) {
-            const previousStream = video.srcObject;
-            const tracks = previousStream.getTracks();
-            tracks.forEach(track => track.stop());
-          }
+        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } });
+        if (video.srcObject) {
+          const previousStream = video.srcObject;
+          const tracks = previousStream.getTracks();
+          tracks.forEach(track => track.stop());
+        }
   
-          video.srcObject = stream;
-
+        video.srcObject = stream;
+  
+        // Ensure the video element is ready to play
+        video.onloadedmetadata = () => {
           video.play().catch((error) => {
             if (error.name === 'AbortError') {
               console.warn('Play request was interrupted:', error);
@@ -33,9 +36,9 @@ const CameraCapture = ({ setIsCameraCaptureOpen, setIsCameraOpen }) => {
               console.error('Error playing video:', error);
             }
           });
+        };
   
-          setIsCameraCaptureOpen(true);
-        }
+        setIsCameraCaptureOpen(true);
       } catch (error) {
         console.error('Error accessing camera:', error);
         setIsPermissionGranted(false);
@@ -54,7 +57,6 @@ const CameraCapture = ({ setIsCameraCaptureOpen, setIsCameraOpen }) => {
     };
   }, [setIsCameraCaptureOpen, setIsPermissionGranted]);
   
-
   const takePhoto = async () => {
     if (videoElementRef.current && canvasRef.current) {
       const canvas = canvasRef.current;
