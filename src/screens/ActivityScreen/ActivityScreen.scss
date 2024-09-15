@@ -29,11 +29,12 @@
     font-family: 'Inter';
     text-align: left;
     margin: 0;
-    padding-top: 10px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .rewardsEarnedText {
+    font-family: 'Poppins';
     font-size: 32px;
     color: #FFE600;
     text-align: left;
@@ -134,7 +135,6 @@
 .activityColumn {
     display: flex;
     flex-direction: column;
-
     gap: 16px;
 }
 
@@ -147,8 +147,12 @@
     justify-content: center;
 }
 
+.activityIcons {
+    width: 28px;
+}
 .activityIconsMystery {
-    padding: 2px 6px;
+    width: 16px;
+    padding: 1px 6px;
 }
 
 .iconsContainer {

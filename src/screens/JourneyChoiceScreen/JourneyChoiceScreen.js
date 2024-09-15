@@ -60,12 +60,12 @@ export default function JourneyChoiceScreen() {
   return (
     <div className="container">
         <h3 className="continueJourneyText">Are your sure you’d like to finish your engaging journey here?</h3>
-        <p className="moveOnText">Once you move on, you <span style={{ color: 'red' }}>will not</span> be able to enter the event again. </p>
+        <p className="moveOnText">Once you move on, you <span style={{ color: 'red', fontWeight: 'bold' }}>will not</span> be able to enter the event again. </p>
         <div className="button-container">
             <MainButton title="Go Back to Activities" onClick={handleGoBack} />
         </div>
         <p className='orText'>or</p>
-        <button class="finishEngagingButton" onClick={handleFinish}>Finish Engaging</button>
+        <button className="finishEngagingButton" onClick={handleFinish}>Finish Engaging</button>
     </div>
   );
 }

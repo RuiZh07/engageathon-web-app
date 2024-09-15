@@ -33,7 +33,6 @@ function App() {
             <Route path="/survey" element={<SurveyScreen />} />
             <Route path="/congratulations" element={<ThankYou />} />
             <Route path="/journey-choice" element={<JourneyChoiceScreen />} />
-            
           </Routes>
 
       </div>

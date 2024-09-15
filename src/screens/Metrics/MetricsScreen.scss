@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;700&display=swap');
+
+
 .metricsContainer {
     padding: 20px 30px;
 }
@@ -20,7 +22,7 @@
     color: rgba(255, 222, 26, 1);
     font-family: 'Poppins';
     font-weight: 500;
-    font-size: 27px;
+    font-size: 30px;
     padding-left: 10px;
     //margin-right: 50px;
 }
@@ -44,7 +46,6 @@
     display: flex;
     align-items: center;
     margin-bottom: 35px;
-    margin-top: 5px;
 }
 .circularProgressContainer {
     width: 95%;
@@ -121,11 +122,12 @@
 
 .overallText {
     font-family: Poppins;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 600;
     line-height: 30px;
     text-align: left;
-    color: #FFFFFF;
+    color: #FFE600;
+    
 }
 
 .activityRankingList {
@@ -200,7 +202,7 @@
 
 .rewardAreaMetrics {
     margin-top: 20px;
-    margin-bottom: 30%;
+    margin-bottom: 60px;
 }
 
 .rewardsContainerMetrics {
@@ -221,7 +223,7 @@
 }
 
 .getPoints {
-    font-size: 18px;
+    font-size: 20px;
     color: #FFFFFF;
     font-family: 'Poppins';
     margin: 0; 
@@ -236,3 +238,59 @@
     margin: 0; 
     padding: 0;
 }
+
+//leaderboard
+.leaderboardListContainer {
+    margin-bottom: 35px;
+}
+.leaderboardList {
+    width: 92%;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 12px 15px;
+    border-radius: 20px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.rankCount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #FF8D00 30.09%, #FFBA00 86.02%, #FFE600 100%);
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    margin-right: 20px;
+}
+
+.leaderboardRankNumber {
+    font-family: Poppins;
+    color: #FFF;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 48px;
+}
+
+.leaderboardNamePoints {
+    //align-items: center;
+    text-align: left;
+}
+
+.leaderboardUsername {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    padding-bottom: 5px;
+}
+.leaderboardPoints {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    color: #747474;
+    
+}
+
+

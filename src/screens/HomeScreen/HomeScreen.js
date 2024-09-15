@@ -87,7 +87,7 @@ export default function HomeScreen() {
                         </div>
                         
                         <div className="postDescription">
-                            <h3 className="eventTitleText">{post.name}</h3>
+                            <h3 className="eventTitleText">{post.title_description}</h3>
                             <p className="descriptionText">{post.description}</p>
                         </div>
                         <div className='homeScreenAttendButton'>

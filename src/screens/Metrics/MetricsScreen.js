@@ -21,6 +21,7 @@ import mystery from '../../assets/icons/question.png';
 export default function MetricsScreen() {
     const [metricsData, setMetricsData] = useState([]);
     const [activityList, setActivityList] = useState([]);
+    const [leaderboardList, setLeaderboardList] = useState([]);
     const navigate = useNavigate();
         
     useEffect(() => {
@@ -58,8 +59,10 @@ export default function MetricsScreen() {
         );
             const data = await response.json();
             const { activity_rankings } = data;
+            const { leaderboard } = data;
             setMetricsData(data);
             setActivityList(activity_rankings);
+            setLeaderboardList(leaderboard);
         } catch (error) {
           console.error('Error fetching metrics data', error);
         }
@@ -68,6 +71,8 @@ export default function MetricsScreen() {
     const handleFinish = () => {
         navigate('/survey'); 
     };
+
+    const sortedActivities = activityList.sort((a, b) => b.completed_count - a.completed_count);
   return (
     <div className="container">
         <div className='metricsContainer'>
@@ -76,6 +81,38 @@ export default function MetricsScreen() {
                 <h3 className="analyticsText">Analytics</h3>
                 <button className="finishEngaging" onClick={handleFinish}>Finish Engaging</button>
             </div>
+            <div className="circularProgressContainer">
+                <p className="yourActivityText">Your Activity Participation</p>
+                <div className="circularProgress">
+                    <CircularProgress percentage={metricsData.activity_points_percentage} />
+                </div>
+                <div className="completeIncomplete">
+                        <FaCircle style={{ color: '#FFC542' }}/>
+                        <p style={{ paddingLeft: "5px", paddingRight: "15px" }}>Completed {metricsData.user_activity_points}</p>
+
+                        <FaCircle style={{ color: '#E9E9E9' }}/>
+                        <p style={{ paddingLeft: "5px", paddingRight: "15px" }}>Incompleted {metricsData.user_activit_points_incomplete}</p>
+                </div>
+            </div>
+
+            <div className="rewardAreaMetrics">
+                <div className="rewardsContainerMetrics">
+                    <img src={starBadge} alt="badge" className="badgeIcon" />
+                    <div className="pointsContainerMetrics">
+                        <p className="getPoints">{metricsData.user_activity_points}</p>
+                        <p className="totalPoint">of 770 Points</p>
+                    </div>
+                </div>
+
+                <div className="rewardsContainerMetrics">
+                    <img src={prize} alt="prize" className="prizeIcon" />
+                    <div className="pointsContainerMetrics">
+                        <p className="getPoints">{metricsData.Number_of_badges}</p>
+                        <p className="totalPoint">of 10 Badges</p>
+                    </div>
+                </div>
+            </div>
+
             <div className="praticipatedUsersContainer">
                 <div className="personIconContainer">
                 <FaRegUser className="personIcon" />
@@ -85,9 +122,23 @@ export default function MetricsScreen() {
                     <p className="participatedText">participated in this Event!</p>
                 </div>
             </div>
+
+            <div className="leaderboardListContainer">
+                {leaderboardList.slice(0, 10).map((user, index) => (
+                    <div key={index} className="leaderboardList">
+                        <div className='rankCount'>
+                            <div className='leaderboardRankNumber'>{index+1}</div>
+                        </div>
+                        <div className='leaderboardNamePoints'>
+                            <h3 className="leaderboardUsername">{user.user}</h3>
+                            <p className="leaderboardPoints">{user.points} Points</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
             <p className="overallText">Overall Activity Participation</p>
             <div className="activityRankingList">
-                {activityList.map((activity, index) => {
+                {sortedActivities.map((activity, index) => {
                     const completedPercentage = (activity.completed_count / metricsData.total_participating_users) * 100;
                     console.log(completedPercentage);
                     //const completedPercentage = 4;
@@ -129,7 +180,7 @@ export default function MetricsScreen() {
                                 <img src={phoneCamera} className="activityIcon" alt="Take a quick snapshot with Veniece" />
                             </div>
                         )}
-                        {activity.name === "Interview with onsite camera crew" && (
+                        {activity.name === "Testimonial with Camera Crew" && (
                             <div className="activityIconBackgrounds">
                                 <img src={videoFront} className="activityIcon" alt="Interview with Onsite Camera Crew" />
                             </div>
@@ -157,38 +208,6 @@ export default function MetricsScreen() {
                     </div>
                     )
                 })}
-            </div>
-            <div className="circularProgressContainer">
-                <p className="yourActivityText">Your Activity Participation</p>
-                <div className="circularProgress">
-                    <CircularProgress percentage={metricsData.activity_points_percentage} />
-                </div>
-                <div className="completeIncomplete">
-                        <FaCircle style={{ color: '#FFC542' }}/>
-                        <p style={{ paddingLeft: "5px", paddingRight: "15px" }}>Completed {metricsData.user_activity_points}</p>
-
-                        <FaCircle style={{ color: '#E9E9E9' }}/>
-                        <p style={{ paddingLeft: "5px", paddingRight: "15px" }}>Incompleted {metricsData.user_activit_points_incomplete}</p>
-
-                </div>
-            </div>
-
-            <div className="rewardAreaMetrics">
-                <div className="rewardsContainerMetrics">
-                    <img src={starBadge} alt="badge" className="badgeIcon" />
-                    <div className="pointsContainerMetrics">
-                        <p className="getPoints">{metricsData.user_activity_points}</p>
-                        <p className="totalPoint">of 770 Points</p>
-                    </div>
-                </div>
-
-                <div className="rewardsContainerMetrics">
-                    <img src={prize} alt="prize" className="prizeIcon" />
-                    <div className="pointsContainerMetrics">
-                        <p className="getPoints">{metricsData.Number_of_badges}</p>
-                        <p className="totalPoint">of 10 Badges</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

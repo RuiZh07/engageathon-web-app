@@ -18,6 +18,7 @@ import phoneCamera from '../../assets/icons/smartphone_camera.png';
 import videoFront from '../../assets/icons/video_camera_front.png';
 import mystery from '../../assets/icons/question.png';
 import QRScanner from "../../components/QRScanner/QRScanner";
+import CameraCapture from '../../components/CameraCapture/CameraCapture';
 
 export default function ActivityScreen() {
   const [userName, setUserName] = useState('');
@@ -30,14 +31,13 @@ export default function ActivityScreen() {
   const [isModalVisible, setModalVisible] = useState(false);
 
   const [isCameraOpen, setIsCameraOpen] = useState(false);
+  const [isCameraCaptureOpen, setIsCameraCaptureOpen] = useState(false);
   const [activeActivity, setActiveActivity] = useState({});
-
   const firstColumn = [];
   const secondColumn = [];
 
   const location = useLocation();
   const navigate = useNavigate();
-
   for (let i = 0; i < activities.length; i++) {
     if (i % 2 === 0) {
       firstColumn.push(activities[i]);  
@@ -45,6 +45,7 @@ export default function ActivityScreen() {
       secondColumn.push(activities[i]);
     }
   }
+
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -137,14 +138,15 @@ export default function ActivityScreen() {
 
   const handleActivityPress = (activity) => {
     if (!activity.confirmed) {
-      // navigate("/congrats", {
-      //   state: {
-      //     activityId: activity.id,
-      //     badgeName: activity.badge,
-      //     activityPoints: activity.activity_points,
-      //   },
-      // });
-      setIsCameraOpen(true);
+      if (activity.activity_name === "Snapshot with Veniece") {
+        // Open CameraCapture for "Snapshot with Veniece"
+        setIsCameraCaptureOpen(true);
+       // setIsCameraOpen(false);
+      } else {
+        // Open QRScanner for other activities
+        setIsCameraOpen(true);
+        setIsCameraCaptureOpen(false);
+      }
       setActiveActivity(activity);
     } else {
       alert("Already Completed", "This activity has already been completed.");
@@ -173,6 +175,7 @@ export default function ActivityScreen() {
         const result = await response.json();
 
         if (response.ok) {
+          fetchActivities(email);
           navigate("/congrats-activity", {
             state: {
               activityId: activeActivity.id,
@@ -194,14 +197,15 @@ export default function ActivityScreen() {
     }
   };
 
+
   return (
     <div className="container">
       <div className="scrollContent">
         <div className="titleContainer">
-          <p className="userName">Hi, {userName}</p>
+          <p className="userName">Hi, {userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase()}</p>
           <button className="finishEngaging" onClick={handleFinishEngaging}>Finish Engaging</button>
         </div>
-          <p className="scanQRText">Scan the QR code at each station to <br/> earn points and badges</p>
+          <p className="scanQRText">Scan the QR code at each station to earn points and badges</p>
 
         <p className="rewardsEarnedText">Rewards Earned</p>
         <div className="rewardArea">
@@ -262,7 +266,7 @@ export default function ActivityScreen() {
                               <img src={phoneCamera} className="activityIcons" alt="Take a quick snapshot with Veniece" />
                           </div>
                       )}
-                      {activity.activity_name === "Interview with onsite camera crew" && (
+                      {activity.activity_name === "Testimonial with Camera Crew" && (
                           <div className="activityIconBackground">
                               <img src={videoFront} className="activityIcons" alt="Interview with Onsite Camera Crew" />
                           </div>
@@ -341,7 +345,7 @@ export default function ActivityScreen() {
                               <img src={phoneCamera} className="activityIcons" alt="Take a quick snapshot with Veniece" />
                           </div>
                       )}
-                      {activity.activity_name === "Interview with onsite camera crew" && (
+                      {activity.activity_name === "Testimonial with Camera Crew" && (
                           <div className="activityIconBackground">
                               <img src={videoFront} className="activityIcons" alt="Interview with Onsite Camera Crew" />
                           </div>
@@ -402,6 +406,14 @@ export default function ActivityScreen() {
           setIsCameraOpen={setIsCameraOpen}
         />
       )}
+
+      {isCameraCaptureOpen && (
+        <CameraCapture
+          setIsCameraCaptureOpen={setIsCameraCaptureOpen}
+          setIsCameraOpen={setIsCameraOpen}
+        />
+      )}
+
     </div>
   );
 }

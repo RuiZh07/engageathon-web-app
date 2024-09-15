@@ -1,12 +1,14 @@
 import React from 'react';
 import './ThankYou.scss';
+import IconTitle from '../../components/IconTitle/IconTitle';
 
 export default function ThankYou() {
   return (
     <div className="container">
-        <div className="confirmation-content-container">
+      <IconTitle />
+        <div className="feedbackContentContainer">
             <div className="greatJobContainer">
-                <h1 className="welcome-text">CONGRATS!</h1>
+                <h1 className="congratsText">CONGRATS!</h1>
                 <div style={{ marginTop: '20px' }}>
                     <p className="overviewText">You've completed your 1st ENGAGEATHON event!</p>
                  </div>

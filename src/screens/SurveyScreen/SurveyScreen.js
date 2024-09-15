@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import MainButton from '../../components/MainButton/MainButton';
 import './SurveyScreen.scss';
+import IconTitle from '../../components/IconTitle/IconTitle';
 
 export default function SurveryScreen() {
     const [feedback, setFeedback] = useState('');
@@ -61,6 +62,7 @@ export default function SurveryScreen() {
 
     return (
         <div className="container">
+            <IconTitle />
             <div className="feedbackContentContainer">
                 <div className="greatJobContainer">
                     <h1 className="rateText">Rate your<br />experience</h1>
@@ -83,7 +85,7 @@ export default function SurveryScreen() {
             </div>
 
 
-            <button class="skipButton" onClick={handlePress}>Skip</button>
+            <button className="skipButton" onClick={handlePress}>Skip</button>
 
         </div>
     );
