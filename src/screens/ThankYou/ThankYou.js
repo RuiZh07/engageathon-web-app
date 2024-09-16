@@ -6,13 +6,13 @@ export default function ThankYou() {
   return (
     <div className="container">
       <IconTitle />
-        <div className="feedbackContentContainer">
+        <div className="thankYouContainer">
             <div className="greatJobContainer">
                 <h1 className="congratsText">CONGRATS!</h1>
-                <div style={{ marginTop: '20px' }}>
-                    <p className="thankYouText">You've completed your 1st ENGAGEATHON event!</p>
+                <div style={{ marginTop: '30px' }}>
+                    <p className="thankYouText">You've completed your 1st<br /> ENGAGEATHON event!</p>
                  </div>
-                 <div style={{ marginTop: '20px' }}>
+                 <div>
                     <p className="thankYouText">Thank you for engaging with us!</p>
                  </div>
             </div>   

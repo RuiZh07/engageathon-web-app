@@ -22,7 +22,7 @@
 }
 
 .prizeImage {
-  margin-top: 80px;
+  margin-top: 70px;
   text-align: center;
 }
 
@@ -37,6 +37,45 @@
   font-size: 24px;
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 80px;
+  margin-bottom: 70px;
 }
 
+@media (max-width: 768px) {
+
+  .prizeImage {
+    margin-top: 70px;
+  }
+
+  .prizeImageContent {
+    width: 50%;
+  }
+
+  .badgeNameText {
+    font-size: 23px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .congratulationsText {
+    font-size: 27px;
+    line-height: 40px;
+  }
+
+  .pointsName {
+    font-size: 17px;
+  }
+
+  .prizeImage {
+    margin-top: 40px;
+  }
+
+  .prizeImageContent {
+    width: 47%;
+  }
+
+  .badgeNameText {
+    font-size: 22px;
+    margin-bottom: 50px;
+  }
+}

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import './OnboardingTutorials.scss'; 
 
-import onboarding1 from '../../assets/splashScreens/onboarding_1.png';
-import onboarding2 from '../../assets/splashScreens/onboarding_2.png';
-import onboarding3 from '../../assets/splashScreens/onboarding_3.png';
-import onboarding4 from '../../assets/splashScreens/onboarding_4.png';
-import onboarding5 from '../../assets/splashScreens/onboarding_5.png';
+import onboarding1 from '../../assets/splashScreens/onboarding_01.png';
+import onboarding2 from '../../assets/splashScreens/onboarding_02.png';
+import onboarding3 from '../../assets/splashScreens/onboarding_03.png';
+import onboarding4 from '../../assets/splashScreens/onboarding_04.png';
+import onboarding5 from '../../assets/splashScreens/onboarding_05.png';
 
 const images = [onboarding1, onboarding2, onboarding3, onboarding4, onboarding5];
 

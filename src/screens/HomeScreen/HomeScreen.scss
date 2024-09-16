@@ -117,7 +117,7 @@
 
 .eventTitleText {
     font-family: 'Poppins';
-    line-height: 26px;
+    line-height: 28px;
     margin: 0;
 }
 .descriptionText {
@@ -135,5 +135,57 @@
     margin-top: 30px;
     margin-bottom: 10px;
     position: relative;
-    
+}
+
+@media (max-width: 768px) {
+    .loading-text {
+        font-size: 19px;
+        line-height: 28px;
+    }
+
+    .userNameText {
+        font-size: 21px;
+        line-height: 28px;
+    }
+
+    .organizationIcon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .eventTitleText {
+        font-size: 22px;
+    }
+
+    .descriptionText {
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-text {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .organizationIcon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .userNameText {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+
+    .eventTitleText {
+        font-size: 20px;
+    }
+
+    .descriptionText {
+        font-size: 14px;
+        line-height: 18px;
+    }
 }

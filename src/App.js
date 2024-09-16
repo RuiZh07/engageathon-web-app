@@ -15,11 +15,13 @@ import SurveyScreen from './screens/SurveyScreen/SurveyScreen';
 import MetricsScreen from './screens/Metrics/MetricsScreen';
 import JourneyChoiceScreen from './screens/JourneyChoiceScreen/JourneyChoiceScreen';
 import ThankYou from './screens/ThankYou/ThankYou';
+import ScrollToTop from './ScrollToTop';
+
 function App() {
   return (
     <Router>
       <div className="App">
-       
+        <ScrollToTop />
           <Routes>
             <Route path="/" element={<WelcomeScreen />} />
             <Route path="/image-slider" element={<ImageSlider />} />

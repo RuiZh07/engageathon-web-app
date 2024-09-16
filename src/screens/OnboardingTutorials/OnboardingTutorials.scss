@@ -33,7 +33,7 @@
     display: flex;
     flex-direction: row;
     position: absolute;
-    bottom: 8vh;
+    bottom: 12vh;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -56,11 +56,13 @@
 
 .buttons-container {
     position: absolute;
-    bottom: 40px;
-    width: 90%;
+    bottom: 85px;
+    width: 91%;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    //box-sizing: border-box;
+    //padding: 0 40px;
+    margin: 0 20px;
 }
 
 .skip-button,
@@ -68,6 +70,8 @@
     background: none;
     border: none;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 
 .get-started-button {

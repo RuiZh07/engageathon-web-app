@@ -16,23 +16,30 @@
     box-sizing: border-box;
     margin-bottom: 80px;
     width: 100%; 
+    overflow: hidden;
 }
 
 .feedbackInput {
     font-family: 'Poppins';
-    width: 96%; 
-    height: 100%; 
+    width: 100%;
     font-size: 16px;
     font-weight: 400;
     line-height: 18px;
     color: rgba(241, 236, 230, 1);
     text-align: left;
     border: none;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 130px;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 100px;
     background-color: transparent;
     border-radius: 18px; 
+    box-sizing: border-box;
+    resize: none;
+    overflow: hidden;
+}
+
+.feedbackInput:focus {
+    outline: none;
 }
 
 .rateText {
@@ -81,7 +88,6 @@
 
     .skipButton {
         font-size: 16px;
-        margin-bottom: 10px; /* Adjusted for smaller screens */
     }
 }
 

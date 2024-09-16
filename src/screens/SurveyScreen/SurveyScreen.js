@@ -32,6 +32,11 @@ export default function SurveryScreen() {
                 return;
             }
 
+            if (!feedback.trim()) {
+                alert('Please enter your feedback before submitting.');
+                return;
+            }
+
             const formData = new URLSearchParams();
             formData.append('email', email);
             formData.append('review', feedback);
@@ -71,8 +76,7 @@ export default function SurveryScreen() {
                     </div>
                 </div>
                 <div className="feedbackContainer">
-                    <input 
-                        type="text" 
+                    <textarea 
                         placeholder="Share your experience with us..." 
                         className="feedbackInput" 
                         value={feedback}
