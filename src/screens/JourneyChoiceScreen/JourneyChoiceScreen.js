@@ -31,7 +31,7 @@ export default function JourneyChoiceScreen() {
             params.append('email', email); 
         }
 
-        const response = await fetch('https://app.engageathon.com/api/finishevent/', {
+        const response = await fetch(`http://app.engageathon.com/api/finishevent/`, {
             method: 'PUT',
             headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

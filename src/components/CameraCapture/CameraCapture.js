@@ -1,117 +1,72 @@
-import { useEffect, useRef, useState } from "react";
-import "./CameraCapture.scss";
+import React,{ useEffect, useRef, useState, useCallback } from "react";
 import { MdCancel } from "react-icons/md";
+import Webcam from 'react-webcam';
 import CustomCameraIcon from "../CustomCameraIcon";
 import MainButton from "../MainButton/MainButton";
+import { MdFlipCameraAndroid } from "react-icons/md";
+import "./CameraCapture.scss";
 
 const CameraCapture = ({ setIsCameraCaptureOpen, setIsCameraOpen }) => {
-  const videoElementRef = useRef(null);
-  const canvasRef = useRef(null);
-  const [isPermissionGranted, setIsPermissionGranted] = useState(true);
+  const webcamRef = useRef(null);
   const [isPhotoCaptured, setIsPhotoCaptured] = useState(false);
-  const [photoDataUrl, setPhotoDataUrlState] = useState("");
+  const [photoDataUrl, setPhotoDataUrl] = useState('');
+  const [facingMode, setFacingMode] = useState('user');
 
-  useEffect(() => {
-    const video = videoElementRef.current;
-  
-    const startCamera = async () => {
-      if (!video) return;
-      
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } });
-        if (video.srcObject) {
-          const previousStream = video.srcObject;
-          const tracks = previousStream.getTracks();
-          tracks.forEach(track => track.stop());
-        }
-  
-        video.srcObject = stream;
-  
-        // Ensure the video element is ready to play
-        video.onloadedmetadata = () => {
-          video.play().catch((error) => {
-            if (error.name === 'AbortError') {
-              console.warn('Play request was interrupted:', error);
-            } else {
-              console.error('Error playing video:', error);
-            }
-          });
-        };
-  
-        setIsCameraCaptureOpen(true);
-      } catch (error) {
-        console.error('Error accessing camera:', error);
-        setIsPermissionGranted(false);
-      }
-    };
-  
-    startCamera();
-  
-    return () => {
-      if (video && video.srcObject) {
-        const stream = video.srcObject;
-        const tracks = stream.getTracks();
-        tracks.forEach(track => track.stop());
-        video.srcObject = null;
-      }
-    };
-  }, [setIsCameraCaptureOpen, setIsPermissionGranted]);
-  
-  const takePhoto = async () => {
-    if (videoElementRef.current && canvasRef.current) {
-      const canvas = canvasRef.current;
-      const video = videoElementRef.current;
+  const capturePhoto = useCallback(() => {
+    const imageSrc = webcamRef.current.getScreenshot();
+    setPhotoDataUrl(imageSrc);
+    setIsPhotoCaptured(true);
+  }, [webcamRef]);
 
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-
-      const context = canvas.getContext("2d");
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-      const photoDataUrl = canvas.toDataURL("image/png");
-
-      setPhotoDataUrlState(photoDataUrl);
-      setIsPhotoCaptured(true);
-    }
-  };
-  
-  const handleSharePhoto = async () => {
-    console.log("Share Photo button clicked");
-    setIsCameraCaptureOpen(false); 
+  const handleSharePhoto = () => {
+    console.log('Share Photo button clicked');
+    setIsCameraCaptureOpen(false);
     setIsCameraOpen(true);
+  };
+
+  const toggleCamera = () => {
+    setFacingMode(prevMode => (prevMode === 'user' ? 'environment' : 'user'));
+  };
+
+  const handleRetake = () => {
+    setIsPhotoCaptured(false);
+    setPhotoDataUrl('');
   };
   
   return (
-    <div className="cameraWrapper"
-      style={!isPermissionGranted ? { backgroundColor: "#fff" } : {}}
-    >
+    <div className="cameraWrapper">
       {isPhotoCaptured ? (
         <div className="photoPreviewWrapper">
           <img src={photoDataUrl} alt="Captured" className="capturedPhoto" />
           <div className="button-container">
-           <MainButton title="Share Photo" onClick={handleSharePhoto} />
+            <MainButton title="Share Photo" onClick={handleSharePhoto} />
+            <button className="retakeButton" onClick={handleRetake}>Retake</button>
           </div>
         </div>
       ) : (
         <>
           <MdCancel
-            size={40}
+            size={36}
             className="backIconCamera"
             onClick={() => setIsCameraCaptureOpen(false)}
           />
-          {isPermissionGranted ? (
-            <>
-              <video className="cameraVideo" ref={videoElementRef} />
-              <div className="captureButtonWrapper">
-                <CustomCameraIcon onClick={takePhoto} />
-              </div>
-              <canvas ref={canvasRef} style={{ display: "none" }} />
-            </>
-          ) : (
-            <p style={{ fontSize: "22px", color: '#FFFFFF' }}>
-              Please grant permission for the camera
-            </p>
-          )}
+          <MdFlipCameraAndroid 
+                size={36}
+                className="flipIcon"
+                onClick={toggleCamera} 
+                />
+          <Webcam
+            audio={false}
+            ref={webcamRef}
+            screenshotFormat="image/png"
+            width="100%"
+            height="100%"
+            videoConstraints={{ facingMode }}
+            className="cameraVideo"
+          />
+          <div className="captureButtonWrapper">
+            <CustomCameraIcon onClick={capturePhoto} />
+          </div>
         </>
       )}
     </div>

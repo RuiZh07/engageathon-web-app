@@ -1,3 +1,4 @@
+
 .cameraWrapper {
     display: flex;
     align-items: center;
@@ -51,7 +52,30 @@
         display: flex;
         justify-content: center;
         width: 100%;
-      }
+    }
+    .flipIcon {
+        position: fixed;
+        z-index: 1009;
+        top: 55px;
+        right: 30px;
 
+    }
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        gap: 10px; 
+    }
+
+    .retakeButton {
+        font-family: 'Inter';
+        font-size: 18px;
+        font-weight: 600;
+        color: #CDCDCD;
+        border: none;
+        background-color: transparent;
+        margin-bottom: 30px;
+        text-decoration: underline;
+    }
   }
   

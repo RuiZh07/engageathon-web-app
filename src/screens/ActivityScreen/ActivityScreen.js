@@ -73,7 +73,7 @@ export default function ActivityScreen() {
       }
 
       const response = await fetch(
-        `https://app.engageathon.com/api/events/activity/87/${email}/`, 
+        `http://app.engageathon.com/api/events/activity/1/${email}/`, 
         {
           method: 'GET',
           headers: {
@@ -159,7 +159,7 @@ export default function ActivityScreen() {
       const { email } = JSON.parse(userData);
       try {
         const response = await fetch(
-          `https://app.engageathon.com/api/events/activity/scan/87/${activeActivity?.activity}/`,
+          `http://app.engageathon.com/api/events/activity/scan/1/${activeActivity?.activity}/`,
           {
             method: "POST",
             headers: {

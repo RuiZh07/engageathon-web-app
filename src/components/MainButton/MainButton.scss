@@ -1,6 +1,6 @@
 .main-button {
   width: 100%;
-  background: linear-gradient(90deg, #FF8D00 72.04%, #FFBA00 86.02%, #FFE600 100%);
+  background: linear-gradient(90deg, #FF8D00 48.5%, #FFDE1A 100%);
   padding: 20px;
   border: none;
   border-radius: 10px;
@@ -8,10 +8,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  &:hover {
-    background: linear-gradient(90deg, #FFDE1A 0%, #FF8D00 100%);
-  }
 
   &:focus {
     outline: none;

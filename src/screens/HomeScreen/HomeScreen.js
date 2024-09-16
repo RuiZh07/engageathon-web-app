@@ -19,7 +19,7 @@ export default function HomeScreen() {
         const fetchEventList = async () => {
             try {
                 const response = await fetch(
-                    `https://app.engageathon.com/api/eventslist/`, 
+                    `http://app.engageathon.com/api/eventslist/`, 
                     {
                         method: 'GET',
                         headers: {

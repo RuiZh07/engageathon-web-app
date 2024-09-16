@@ -49,7 +49,7 @@ export default function MetricsScreen() {
           }
     
           const response = await fetch(
-            `https://app.engageathon.com/api/metrics/individual/87/${email}/`, 
+            `http://app.engageathon.com/api/metrics/individual/1/${email}/`, 
             {
               method: 'GET',
               headers: {
