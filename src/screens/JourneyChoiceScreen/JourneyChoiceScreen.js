@@ -31,7 +31,7 @@ export default function JourneyChoiceScreen() {
                 params.append('email', email); 
             }
 
-            const response = await fetch(`http://44.214.163.41/api/finishevent/`, {
+            const response = await fetch(`https://44.214.163.41/api/finishevent/`, {
                 method: 'PUT',
                 headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

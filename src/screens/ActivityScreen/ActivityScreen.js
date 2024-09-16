@@ -73,7 +73,7 @@ export default function ActivityScreen() {
       }
 
       const response = await fetch(
-        `http://44.214.163.41/api/events/activity/1/${email}/`, 
+        `https://44.214.163.41/api/events/activity/1/${email}/`, 
         {
           method: 'GET',
           headers: {
@@ -159,7 +159,7 @@ export default function ActivityScreen() {
       const { email } = JSON.parse(userData);
       try {
         const response = await fetch(
-          `http://44.214.163.41/api/events/activity/scan/1/${activeActivity?.activity}/`,
+          `https://44.214.163.41/api/events/activity/scan/1/${activeActivity?.activity}/`,
           {
             method: "POST",
             headers: {

@@ -49,7 +49,7 @@ export default function MetricsScreen() {
           }
     
           const response = await fetch(
-            `http://44.214.163.41/api/metrics/individual/1/${email}/`, 
+            `https://44.214.163.41/api/metrics/individual/1/${email}/`, 
             {
               method: 'GET',
               headers: {
