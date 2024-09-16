@@ -66,7 +66,7 @@ export default function HomeScreen() {
                             />  
                             <p className="userNameText">{post.name}</p>
                             <button className="dotsButton">
-                                <BsThreeDotsVertical size={23} />
+                                <BsThreeDotsVertical size={23} color="Black" />
                             </button>
                         </div>
 

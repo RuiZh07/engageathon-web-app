@@ -10,10 +10,10 @@ export default function ThankYou() {
             <div className="greatJobContainer">
                 <h1 className="congratsText">CONGRATS!</h1>
                 <div style={{ marginTop: '20px' }}>
-                    <p className="overviewText">You've completed your 1st ENGAGEATHON event!</p>
+                    <p className="thankYouText">You've completed your 1st ENGAGEATHON event!</p>
                  </div>
                  <div style={{ marginTop: '20px' }}>
-                    <p className="overviewText">Thank you for engaging with us!</p>
+                    <p className="thankYouText">Thank you for engaging with us!</p>
                  </div>
             </div>   
         </div>

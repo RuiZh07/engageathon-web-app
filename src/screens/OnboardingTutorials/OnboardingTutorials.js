@@ -17,8 +17,7 @@ export default function ImageSlider() {
     const handleGetStartedButton = () => {
         navigate('/sign-up');
     };
-
-
+    
   const handleNextPress = () => {
     if (currentIndex < images.length - 1) {
       setCurrentIndex(currentIndex + 1);

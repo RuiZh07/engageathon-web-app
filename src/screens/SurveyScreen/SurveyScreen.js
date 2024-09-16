@@ -66,7 +66,7 @@ export default function SurveryScreen() {
             <div className="feedbackContentContainer">
                 <div className="greatJobContainer">
                     <h1 className="rateText">Rate your<br />experience</h1>
-                    <div style={{ marginTop: '20px' }}>
+                    <div style={{ marginTop: '15px', marginBottom: '20px' }}>
                         <p className="shareText">Share your experience to help us improve and earn extra rewards</p>
                     </div>
                 </div>

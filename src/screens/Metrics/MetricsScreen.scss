@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;700&display=swap');
 
-
 .metricsContainer {
-    padding: 20px 30px;
+    padding: 20px 20px;
 }
 
 .metricsHeaderContainer {
@@ -26,6 +25,7 @@
     padding-left: 10px;
     //margin-right: 50px;
 }
+
 .finishEngaging {
     border: none;
     border-radius: 8px;
@@ -37,7 +37,7 @@
     color: rgba(225, 225, 225, 1);
 }
 
-.praticipatedUsersContainer {
+.participatedUsersContainer {
     width: 95%;
     background-color: rgba(255, 255, 255, 1);
     padding-left: 15px;
@@ -45,8 +45,9 @@
     border: 1px solid;
     display: flex;
     align-items: center;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
 }
+
 .circularProgressContainer {
     width: 95%;
     background-color: rgba(255, 255, 255, 1);
@@ -62,6 +63,7 @@
     font-weight: 500;
     padding: 10px;
 }
+
 .youActivityText {
     font-family: "Poppins";
 
@@ -78,11 +80,18 @@
     justify-content: center;
 }
 
-
 .participatedUsers {
     margin-left: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.completedNumberText {
+    padding-left: 5px;
+    padding-right: 15px;
+    color: #44444F;
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 .totalUsers {
@@ -142,18 +151,21 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
+
 .activityIcon {
     filter: brightness(0) invert(1);
     width: 25px;
 }
+
 .activityIconMystery {
     filter: brightness(0) invert(1);
     width: 15px;
     margin-right: 10px;
     margin-left: 5px;
 }
+
 .verticalLine {
     position: absolute;
     left: 40px; 
@@ -245,13 +257,13 @@
 }
 .leaderboardList {
     width: 92%;
-    background-color: rgba(255, 255, 255, 1);
-    padding: 12px 15px;
+    background: #464646;
+    padding: 5px 15px;
     border-radius: 20px;
     border: 1px solid;
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .rankCount {
     display: flex;
@@ -283,14 +295,166 @@
     font-weight: 500;
     margin: 0;
     padding-bottom: 5px;
+    color: #FFFFFF;
+
 }
 .leaderboardPoints {
     font-family: Inter;
     font-size: 16px;
     font-weight: 400;
     margin: 0;
-    color: #747474;
-    
+    color: #B9B9B9;
 }
 
 
+@media (max-width: 768px) {
+    .analyticsText {
+        font-size: 28px;
+    }
+
+    .finishEngaging {
+        font-size: 15px;
+    }
+
+    .personIcon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .totalUsers {
+        font-size: 23px;
+    }
+
+    .participatedText {
+        font-size: 13px;
+    }
+
+    .overallText {
+        font-size: 21px;
+    }
+
+    .activityIcon {
+        width: 24px;
+    }
+    .activityIconMystery {
+        width: 14px;
+    }
+
+    .completedCount {
+        height: 33px;
+    }
+
+    .completedCountPercent {
+        font-size: 18px;
+    }
+
+    .completedCountPercentOutside {
+        font-size: 18px;
+    }
+
+    .getPoints {
+        font-size: 19px;
+    }
+
+    .totalPoint {
+        font-size: 15px;
+    }
+
+    .rankCount {
+        width: 46px;
+        height: 46px;
+    }
+    
+    .leaderboardRankNumber {
+        font-size: 26px;
+    }
+    
+    .leaderboardUsername {
+        font-size: 19px;
+
+    }
+    .leaderboardPoints {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .metricsContainer {
+        //padding: 5px;
+    }
+
+    .analyticsText {
+        font-size: 26px;
+    }
+
+    .finishEngaging {
+        font-size: 14px;
+    }
+
+    .praticipatedUsersContainer,
+    .circularProgressContainer {
+        //width: 80%;
+    }
+
+    .personIcon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .totalUsers {
+        font-size: 22px;
+    }
+
+    .participatedText {
+        font-size: 13px;
+    }
+
+    .overallText {
+        font-size: 20px;
+    }
+
+    .activityIcon {
+        width: 23px;
+    }
+
+    .activityIconMystery {
+        width: 13px;
+    }
+
+    .completedCount {
+        height: 30px;
+    }
+
+    .completedCountPercent {
+        font-size: 16px;
+    }
+
+    .completedCountPercentOutside {
+        font-size: 16px;
+    }
+
+    .getPoints {
+        font-size: 18px;
+    }
+
+    .totalPoint {
+        font-size: 14px;
+    }
+
+    .rankCount {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .leaderboardRankNumber {
+        font-size: 24px;
+    }
+    
+    .leaderboardUsername {
+        font-size: 19px;
+
+    }
+    .leaderboardPoints {
+        font-size: 15px;
+    }
+}

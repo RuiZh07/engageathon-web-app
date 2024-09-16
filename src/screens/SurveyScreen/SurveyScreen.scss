@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap');
 
 .feedbackContentContainer {
-    margin-top: 18%;
-    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    margin-top: 10%;
 }
 
 .feedbackContainer {
-    margin-top: 30px;
     border: 2px solid #D6D6D6;
     background-color: #1E1E1E;
     border-radius: 20px; 
     box-sizing: border-box;
-    margin-right: 30px;
-    margin-bottom: 120px;
-    width: 90%; 
+    margin-bottom: 80px;
+    width: 100%; 
 }
 
 .feedbackInput {
@@ -40,6 +42,7 @@
     text-align: left;
     font-family: 'Poppins';
     line-height: 40px;
+    margin-bottom: 0;
 }
 
 .shareText {
@@ -49,7 +52,7 @@
     margin: 0;
     text-align: left;
     font-family: 'Inter';
-    padding-right: 140px;
+    margin-right: 100px;
 }
 
 .skipButton {
@@ -61,4 +64,41 @@
     background-color: transparent;
     margin-top: 10px;
     margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    .feedbackInput {
+        font-size: 15px;
+    }
+
+    .rateText {
+        font-size: 37px;
+    }
+
+    .shareText {
+        font-size: 17px;
+    }
+
+    .skipButton {
+        font-size: 16px;
+        margin-bottom: 10px; /* Adjusted for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .feedbackInput {
+        font-size: 14px;
+    }
+
+    .rateText {
+        font-size: 34px;
+    }
+
+    .shareText {
+        font-size: 15px;
+    }
+
+    .skipButton {
+        font-size: 14px;
+    }
 }

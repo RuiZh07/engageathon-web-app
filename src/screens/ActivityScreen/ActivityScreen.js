@@ -212,15 +212,15 @@ export default function ActivityScreen() {
           <div className="rewardsContainer">
             <img src={starBadge} alt="badge" className="badgeIcon" />
             <div className="pointsContainer">
-              <p className="getPoints">{totalPoints}</p>
-              <p className="totalPoint">of {totalPossiblePoints} Points</p>
+              <p className="getPointsActivity">{totalPoints}</p>
+              <p className="totalPointActivity">of {totalPossiblePoints} Points</p>
             </div>
           </div>
           <div className="rewardsContainer">
             <img src={prize} alt="prize" className="prizeIcon" />
             <div className="pointsContainer">
-              <p className="getPoints">{totalBadges}</p>
-              <p className="totalPoint">of {unconfirmedCount} Badges</p>
+              <p className="getPointsActivity">{totalBadges}</p>
+              <p className="totalPointActivity">of {unconfirmedCount} Badges</p>
             </div>
           </div>
         </div>

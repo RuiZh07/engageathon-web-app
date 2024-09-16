@@ -18,13 +18,15 @@
 
 .card-container {
     flex: 1;
+    background-color: #1f1f1e;
 }
 
 .card {
     width: 100%;
+    //width: auto;
     height: auto;
     max-height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .indicator {
@@ -95,4 +97,20 @@
 .get-started-button-text {
     color: #ff8d00;
     font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .skip-button-text,
+    .next-button-text,
+    .get-started-button-text {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skip-button-text,
+    .next-button-text,
+    .get-started-button-text {
+        font-size: 16px;
+    }
 }

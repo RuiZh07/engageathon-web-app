@@ -48,7 +48,7 @@
 }
 
 .rewardsContainer {
-    width: 44%;
+    width: 42%;
     background-color: #1E1E1E;
     padding-left: 15px;
     padding-right: 5px;
@@ -74,7 +74,7 @@
     padding-bottom: 15px;
 }
 
-.getPoints {
+.getPointsActivity {
     font-size: 18px;
     color: #FFFFFF;
     font-family: 'Poppins';
@@ -83,7 +83,7 @@
     text-align: left;
 }
 
-.totalPoint {
+.totalPointActivity {
     font-size: 16px;
     color: #ABABAB;
     font-family: 'Poppins';
@@ -97,6 +97,7 @@
     color: #FFE600;
     font-family: 'Poppins';
     text-align: left;
+    margin: 24px 0;
 }
 /*
 .activityArea {
@@ -224,4 +225,128 @@
     margin-top: 50px;
 }
 
+@media (max-width: 768px) {
+    .userName {
+        font-size: 32px;
+    }
 
+    .scanQRText {
+        font-size: 15px;
+    }
+
+    .rewardsEarnedText {
+        font-size: 28px;
+    }
+
+    .badgeIcon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .prizeIcon {
+        width: 43px;
+        height: 43px;
+    }
+
+    .pointsContainer {
+        margin-left: 12px;
+    }
+
+    .getPointsActivity {
+        font-size: 16px;
+    }
+
+    .totalPointActivity {
+        font-size: 14px;
+    }
+
+    .activitiesText {
+        font-size: 28px;
+    }
+
+    .activityIconBackground {
+        padding: 10px;
+    }
+
+    .activityIcons {
+        width: 24px;
+    }
+
+    .activityNameText {
+        font-size: 18px;
+    }
+
+    .pointText {
+        font-size: 13px;
+    }
+
+    .activityIconsMystery {
+        width: 14px;
+        padding: 1px 4px;
+    }
+
+    .modalContent {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .userName {
+        font-size: 32px;
+    }
+
+    .scanQRText {
+        font-size: 15px;
+    }
+
+    .rewardsEarnedText {
+        font-size: 24px;
+    }
+
+    .badgeIcon {
+        width: 34px;
+        height: 34px;
+    }
+    
+    .prizeIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .pointsContainer {
+        margin-left: 12px;
+    }
+    .getPointsActivity {
+        font-size: 16px;
+    }
+
+    .totalPointActivity {
+        font-size: 14px;
+    }
+
+    .activitiesText {
+        font-size: 26px;
+        margin: 20px 0;
+    }
+
+    .activityIconBackground {
+        padding: 8px;
+    }
+    .activityNameText {
+        font-size: 18px;
+    }
+    .pointText {
+        font-size: 14px;
+
+    }
+    .activityIcons {
+        width: 20px;
+    }
+
+    .activityIconsMystery {
+        width: 12px;
+        padding: 1px 2px;
+    }
+
+}

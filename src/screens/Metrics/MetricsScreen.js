@@ -88,10 +88,10 @@ export default function MetricsScreen() {
                 </div>
                 <div className="completeIncomplete">
                         <FaCircle style={{ color: '#FFC542' }}/>
-                        <p style={{ paddingLeft: "5px", paddingRight: "15px" }}>Completed {metricsData.user_activity_points}</p>
+                        <p className="completedNumberText">Completed <strong>{metricsData.user_activity_points}</strong></p>
 
                         <FaCircle style={{ color: '#E9E9E9' }}/>
-                        <p style={{ paddingLeft: "5px", paddingRight: "15px" }}>Incompleted {metricsData.user_activit_points_incomplete}</p>
+                        <p className="completedNumberText">Incompleted <strong>{metricsData.user_activit_points_incomplete}</strong></p>
                 </div>
             </div>
 
@@ -113,13 +113,12 @@ export default function MetricsScreen() {
                 </div>
             </div>
 
-            <div className="praticipatedUsersContainer">
+            <div className="participatedUsersContainer">
                 <div className="personIconContainer">
                 <FaRegUser className="personIcon" />
                 </div>
                 <div className="participatedUsers">
                     <p className="totalUsers">{metricsData.total_participating_users} Users</p>
-                    <p className="participatedText">participated in this Event!</p>
                 </div>
             </div>
 

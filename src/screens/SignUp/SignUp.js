@@ -64,7 +64,6 @@ export default function SignUp() {
 
     return (
         <div className="sign-up-screen-container">
-            <div className="background-image" />
             <div className="form-container">
                 <IconTitle />
                 <div className="sign-up-container">

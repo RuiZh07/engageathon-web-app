@@ -15,13 +15,14 @@
 }
 
 .form-container {
-    position: relative;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
     width: 100%;
+    height: 100%;
     box-sizing: border-box;
     flex-grow: 1;
+    margin-top: auto;
 }
 
 .sign-up-container {
@@ -80,4 +81,62 @@
     justify-content: center;
     width: 100%;
     margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .sign-up-container {
+        margin-top: 40px;
+        margin-left: 15px;
+        margin-bottom: 15px;
+        margin-right: 15px;
+        padding: 30px 20px;
+    }
+
+    .begin-text {
+        font-size: 28px;
+        line-height: 26px;
+    }
+
+    .enter-text {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .user-input {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .continue-button-container {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sign-up-container {
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        padding: 20px 15px;
+    }
+
+    .begin-text {
+        font-size: 24px;
+        line-height: 22px;
+    }
+
+    .enter-text {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .user-input {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .continue-button-container {
+        margin-top: 15px;
+    }
 }

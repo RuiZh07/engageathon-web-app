@@ -12,14 +12,26 @@
   &:focus {
     outline: none;
   }
-
-  .button-text {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 17px;
-    letter-spacing: 0.4px;
-    color: #FFFFFF;
-  }
+}
+.main-button .button-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 17px;
+  letter-spacing: 0.4px;
+  color: #FFFFFF;
 }
   
+@media (max-width: 768px) {
+  .main-button .button-text {
+    font-size: 17px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-button .button-text {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}

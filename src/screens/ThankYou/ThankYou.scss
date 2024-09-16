@@ -1,9 +1,19 @@
-// use the same styles as survey screen
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
 .congratsText {
     color: #FFE600;
     font-weight: 600;
     font-size: 40px;
     text-align: left;
     font-family: 'Poppins';
-    line-height: 44px;
+    line-height: 36px;
+  }
+
+  .thankYouText {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    color: #FFFFFF;
+
   }

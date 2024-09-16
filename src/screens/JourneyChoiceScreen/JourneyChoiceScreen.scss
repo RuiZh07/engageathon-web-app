@@ -50,3 +50,53 @@
     margin-bottom: 30px;
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    .continueJourneyText {
+        font-size: 28px;
+        line-height: 33px;
+    }
+
+    .moveOnText {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 240px;
+
+    }
+
+    .orText {
+        font-size: 16px;
+        line-height: 16px;
+        padding: 8px 0;
+    }
+
+    .finishEngagingButton {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .continueJourneyText {
+        font-size: 26px;
+        line-height: 30px;
+
+    }
+
+    .moveOnText {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 200px;
+    }
+    .orText {
+        font-size: 14px;
+        line-height: 14px;
+        padding: 7px 0;
+    }
+
+    .finishEngagingButton {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}

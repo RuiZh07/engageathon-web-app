@@ -4,3 +4,47 @@
   padding-left: 30px;
   padding-top: 100px;
 }
+
+.eaLogo {
+  width: 46px;
+  height: 42px;
+}
+
+.engageathonLogo {
+  transform: scale(1.2);
+  margin-left: 26px;
+}
+
+@media (max-width: 768px) {
+  .engageathon-logo-container {
+      padding-left: 15px; 
+      padding-top: 80px;
+  }
+
+  .eaLogo {
+    width: 42px;
+    height: 38px;
+  }
+  
+  .engageathonLogo {
+    transform: scale(1.15);
+    margin-left: 21px;
+  }
+}
+
+@media (max-width: 480px) {
+  .engageathon-logo-container {
+      padding-left: 15px; 
+      padding-top: 70px;  
+  }
+
+  .eaLogo {
+    width: 42px;
+    height: 38px;
+  }
+  
+  .engageathonLogo {
+    transform: scale(1.15);
+    margin-left: 21px;
+  }
+}
