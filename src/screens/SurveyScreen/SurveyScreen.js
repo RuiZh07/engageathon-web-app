@@ -41,7 +41,7 @@ export default function SurveryScreen() {
             formData.append('email', email);
             formData.append('review', feedback);
 
-            const response = await fetch('https://44.214.163.41/api/report/', {
+            const response = await fetch('https://app.engageathon.com/api/report/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

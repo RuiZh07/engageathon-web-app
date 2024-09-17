@@ -2,7 +2,6 @@
   "name": "engageathon-web-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://app.engageathon.com/",
   "dependencies": {
     "@react-native-camera-roll/camera-roll": "^7.8.3",
     "@testing-library/jest-dom": "^5.17.0",
