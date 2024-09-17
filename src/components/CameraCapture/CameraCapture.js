@@ -19,7 +19,14 @@ const CameraCapture = ({ setIsCameraCaptureOpen, setIsCameraOpen }) => {
   }, [webcamRef]);
 
   const handleSharePhoto = () => {
-    console.log('Share Photo button clicked');
+    if (photoDataUrl) {
+      const link = document.createElement('a');
+      link.href = photoDataUrl;
+      link.download = 'captured-photo.png'; 
+      document.body.appendChild(link); 
+      link.click(); 
+      document.body.removeChild(link); 
+    }
     setIsCameraCaptureOpen(false);
     setIsCameraOpen(true);
   };

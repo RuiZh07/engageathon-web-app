@@ -49,7 +49,7 @@ export default function MetricsScreen() {
           }
     
           const response = await fetch(
-            `https://app.engageathon.com/api/metrics/individual/1/${email}/`, 
+            `https://44.214.163.41/api/metrics/individual/1/${email}/`, 
             {
               method: 'GET',
               headers: {
@@ -201,7 +201,7 @@ export default function MetricsScreen() {
                             background: `linear-gradient(90deg, #FF8D01 3.57%, #FFBA00 80.71%, #FFD919 100%)`
                         }}>
                             <p className={completedPercentage <= 4 ? 'completedCountPercentOutside' : 'completedCountPercent'}>
-                                {metricsData.total_participating_users}
+                                {activity.completed_count}
                             </p>
                         </div>
                     </div>

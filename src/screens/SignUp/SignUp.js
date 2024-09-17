@@ -28,7 +28,7 @@ export default function SignUp() {
         }
 
         try {
-            const response = await fetch(`https://app.engageathon.com/api/auth/userlogin/temp/`, {
+            const response = await fetch(`https://44.214.163.41/api/auth/userlogin/temp/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
