@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import './OnboardingTutorials.scss'; 
 
@@ -25,7 +25,7 @@ export default function ImageSlider() {
       handleGetStartedButton();
     }
   };
-
+  
   return (
     <div className="main-background-color">
       <div className="tutorials-container">
