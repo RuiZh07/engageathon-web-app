@@ -56,7 +56,7 @@
 
 .buttons-container {
     position: absolute;
-    bottom: 85px;
+    bottom: 11vh;
     width: 91%;
     display: flex;
     justify-content: space-between;
@@ -116,5 +116,29 @@
     .next-button-text,
     .get-started-button-text {
         font-size: 16px;
+    }
+}
+
+@media (max-height: 850px) { 
+    .card {
+        margin-top: -20px;
+    }
+    .buttons-container {
+        bottom: 14vh;
+    }
+    .indicator {
+        bottom: 15vh;
+    }
+}
+
+@media (max-height: 667px) { 
+    .card {
+        margin-top: 0;
+    }
+    .buttons-container {
+        bottom: 11vh;
+    }
+    .indicator {
+        bottom: 12vh;
     }
 }
