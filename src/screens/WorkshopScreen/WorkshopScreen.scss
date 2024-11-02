@@ -1,0 +1,54 @@
+.workshopRewardsContainer {
+    background-color: #1E1E1E;
+    padding-left: 15px;
+    padding-right: 5px;
+    border-radius: 10px;
+    border: 1px solid #FAB81E;
+    display: flex;
+    align-items: center;
+}
+.workshopContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #FAB81E;
+    border-radius: 14px;
+    padding: 10px 15px 10px 15px;
+    margin-bottom: 15px;
+}
+
+.workshopIconContainer {
+    background: linear-gradient(41.78deg, #FF8D00 2.95%, #FFDE1A 170.14%);
+    border-radius: 20%; 
+    padding: 14px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.rewardsEarnedTextWorkshop {
+    font-family: 'Poppins';
+    font-size: 24px;
+    color: #FFE600;
+    text-align: left;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.activitiesTextWorkshop {
+    font-size: 24px;
+    color: #FFE600;
+    font-family: 'Poppins';
+    font-weight: 500;
+    text-align: left;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.workshopText {
+    padding-left: 10px;
+    font-family: 'Poppins';
+    color: #FFFFFF;
+}
