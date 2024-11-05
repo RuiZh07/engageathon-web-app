@@ -9,9 +9,11 @@ export default function ThankYou() {
         <div className="thankYouContainer">
             <div className="greatJobContainer">
                 <h1 className="congratsText">CONGRATS!</h1>
+                {/*
                 <div style={{ marginTop: '30px' }}>
                     <p className="thankYouText">You've completed your 1st<br /> ENGAGEATHON event!</p>
                  </div>
+                 */}
                  <div>
                     <p className="thankYouText">Thank you for engaging with us!</p>
                  </div>
