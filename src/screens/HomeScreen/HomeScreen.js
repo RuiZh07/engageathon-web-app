@@ -11,8 +11,13 @@ export default function HomeScreen() {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
-    const handleAttend = () => {
-        navigate('/activity-screen')
+    const handleAttend = (post) => {
+        if (post.name === 'ENGAGEATHON') {
+            navigate('/activity-screen');
+        } else {
+            navigate('/workshop-screen')
+        }
+        
     };
 
     useEffect(() => {
@@ -37,12 +42,19 @@ export default function HomeScreen() {
     };
         fetchEventList();
     }, []);
-
+    const specificEventId = 6;
+    const sortedEventList = eventList.sort((a, b) => {
+        if (a.id === specificEventId) return -1; // Move specific event to the top
+        if (b.id === specificEventId) return 1;
+        return 0; // Keep other items in their existing order
+    });
+    {/*
     const sortedEventList = eventList.sort((a, b) => {
         const hasActivityA = a.activities && a.activities.length > 0;
         const hasActivityB = b.activities && b.activities.length > 0;
         return (hasActivityB ? 1 : 0) - (hasActivityA ? 1 : 0);
     });
+    */}
 
     return (
         <div className='container'>
@@ -51,14 +63,15 @@ export default function HomeScreen() {
             </div>
             {loading && <div className="loading-text">Loading...</div>}
             {sortedEventList.map((post) => {
-                const hasActivity = post.activities && post.activities.length > 0;
+                //const hasActivity = post.activities && post.activities.length > 0;
+                const hasActivity = post.id === 6;
                 return (
                     <div key={post.id} className={`homePost ${!hasActivity ? 'inactive' : ''}`}>
                         <div className="postHeader">
                             <img
                                 src={
                                     post.profile_photo_url 
-                                    ? `data:image/jpeg;base64,${post.profile_photo_url}` 
+                                    ? `${post.profile_photo_url}` 
                                     : ""
                                 }  
                                 alt="Organizer"
@@ -79,7 +92,7 @@ export default function HomeScreen() {
                             <img
                                 src={
                                     post.image_urls[0]?.image_url 
-                                    ? `data:image/jpeg;base64,${post.image_urls[0].image_url}` 
+                                    ? `${post.image_urls[0].image_url}` 
                                     : ""} 
                                 className="postImage"
                                 alt="Event"
@@ -91,7 +104,7 @@ export default function HomeScreen() {
                             <p className="descriptionText">{post.description}</p>
                         </div>
                         <div className='homeScreenAttendButton'>
-                            <MainButton title="Attend" onClick={handleAttend} />
+                            <MainButton title="Attend" onClick={() => handleAttend(post)} />
                         </div>
                     </div>
                 );
