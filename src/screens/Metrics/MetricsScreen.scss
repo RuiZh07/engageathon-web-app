@@ -155,8 +155,8 @@
 }
 
 .activityIcon {
-    filter: brightness(0) invert(1);
-    width: 25px;
+    //filter: brightness(0) invert(1);
+    //width: 25px;
 }
 
 .activityIconMystery {
@@ -306,6 +306,49 @@
     color: #B9B9B9;
 }
 
+
+.activityLegendChart {
+    border: 2px solid #ddd;          
+    border-radius: 8px;            
+    //padding: 16px;                   
+    margin-top: 20px;                
+    background-color: #1E1E1E;       
+    width: fit-content;              
+  }
+  
+.activityLegendText{
+    font-family: 'Poppins';
+    font-size: 17px;
+    font-weight: 500;
+    color:rgba(225, 225, 225, 1);
+}
+.legendItem {
+    display: flex;                  
+    align-items: center;
+    //padding: 8px 16px;                    
+    border-Top: 1px solid #ccc;            
+                      
+}
+.legendItem svg {
+    //margin-right: 10px;
+    padding-right: 15px;     
+    padding-left: 15px;           
+}
+  
+
+.activityName {
+    font-family: 'Inter';
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    color: #ffffff;
+    border-left: 1px solid #ccc; 
+    padding: 10px;
+    flex-grow: 1;
+    flex-basis: 0; 
+    text-align: left;
+    line-height: 18px;
+}
 
 @media (max-width: 768px) {
     .analyticsText {
