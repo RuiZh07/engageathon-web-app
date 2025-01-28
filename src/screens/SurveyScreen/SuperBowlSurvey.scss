@@ -1,0 +1,50 @@
+.scaleOptions {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-right: 30px;
+}
+.yesNoOptions {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 70px;
+    margin-right: 90px;
+}
+.openEndedInput {
+    background-color: #1E1E1E;
+    border-radius: 18px; 
+    border: 1px solid #FFFFFF;
+    font-family: 'Poppins';
+    width: 90%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 40px;
+    margin-top: 10px;
+    color:#FFFFFF;
+}
+
+.superBowlRateContainer {
+    margin-left: 30px;
+    margin-top: 15px;
+    
+}
+.surveyContainer {
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+.surveyQuestion {
+    text-align: left;
+    color: #ffffff;
+    font-size: 17px;
+    font-family: 'Poppins';
+}
+.superBowlSubmitContainer {
+    width: 85%;
+    margin: 5px auto;
+    margin-Bottom: 50px;
+}
