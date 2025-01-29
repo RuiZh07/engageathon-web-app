@@ -195,7 +195,7 @@ export default function SheShineActivity() {
         }
     }, [location.state, activities]);
 
-
+    // Total 30 badges
     useEffect(() => {
         if (totalBadges === 30) {
             setModalVisible(true);
