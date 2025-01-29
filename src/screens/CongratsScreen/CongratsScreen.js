@@ -11,6 +11,7 @@ import ENGAGEaVeniece from '../../assets/prizes/ENGAGEaVeniece.png'
 import SecretSeeker from '../../assets/prizes/SecretSeeker.png'
 import StarInterviewer from '../../assets/prizes/StarInterviewer.png'
 import BannerMoment from '../../assets/prizes/BannerMoment.png'
+import prizeIcon from '../../assets/prizes/prize.png';
 import MainButton from '../../components/MainButton/MainButton';
 
 const imageMap = {
@@ -30,20 +31,31 @@ const CongratsScreen = () => {
   const navigate = useNavigate();
   const location = useLocation();
   console.log('Location state:', location.state);
-  const { activityId, badgeName, activityPoints, email } = location.state || {};
-  console.log( activityId, badgeName, activityPoints)
-
+  const { activityId, badgeName, activityPoints, email, number } = location.state || {};
+  console.log( activityId, badgeName, activityPoints, email)
+  console.log("number", number);
+  {/*
   const handleContinue = () => {
     navigate('/activity-screen', { state: { completedActivityId: activityId, email } });
     console.log(activityId);
   };
+
+  const handleContinue = () => {
+    navigate(`/she-shine-workshop/${number}`, { state: { completedActivityId: activityId, email } });
+    console.log(activityId);
+  };
+  */}
+  const handleContinue = () => {
+    navigate('/superbowl-survey', { state: { completedActivityId: activityId, email } });
+  }
+  
 
   return (
     <div className="container">
       <p className="congratulationsText">Congratulations!</p>
       <p className="pointsName">You have earned {activityPoints} points and a badge!</p>
       <div className="prizeImage">
-        <img src={imageMap[badgeName]} alt="prize" className="prizeImageContent" />
+        <img src={prizeIcon} alt="prize" className="prizeImageContent" />
       </div>
       <p className="badgeNameText">{badgeName}</p>
       <div className="button-container">
