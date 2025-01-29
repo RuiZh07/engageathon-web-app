@@ -16,7 +16,7 @@ export default function JourneyChoiceScreen() {
                     setEmail(email);
                 }
             } catch (error) {
-                    console.error('Error fetching user data:', error);
+                console.error('Error fetching user data:', error);
             }
         };
         
@@ -54,7 +54,7 @@ export default function JourneyChoiceScreen() {
     };
     
     const handleGoBack = () => {
-        navigate('/activity-screen'); 
+        navigate(-1); 
     };
 
   return (
