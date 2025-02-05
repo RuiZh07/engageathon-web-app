@@ -11,11 +11,11 @@ import CameraCapture from '../../components/CameraCapture/CameraCapture';
 import MainButton from '../../components/MainButton/MainButton';
 import './SuperBowlActivity.scss';
 
-import cigars from "../../assets/superbowl/cigars.png";
-import dance from "../../assets/superbowl/dance.png";
-import collegeDay from "../../assets/superbowl/collegeDay.png";
-import gala from "../../assets/superbowl/gala.png";
-import gaming from "../../assets/superbowl/gaming.png";
+//import cigars from "../../assets/superbowl/cigars.png";
+//import dance from "../../assets/superbowl/dance.png";
+//import collegeDay from "../../assets/superbowl/collegeDay.png";
+//import gala from "../../assets/superbowl/gala.png";
+//import gaming from "../../assets/superbowl/gaming.png";
 import sipSmoke from "../../assets/superbowl/sip_smoke.png";
 import masquerade from "../../assets/superbowl/masquerade.png";
 import bigGame from "../../assets/superbowl/big_game.png";
