@@ -9,7 +9,7 @@ export default function CollectRewardsScreen() {
   const navigate = useNavigate();
 
   const handleViewAnalytics = () => {
-    navigate('/metrics');
+    navigate('/superbowl-metrics');
   };
 
   return (
