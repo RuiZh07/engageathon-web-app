@@ -24,6 +24,7 @@ import SuperBowlHome from './screens/HomeScreen/SuperBowlHome';
 import SuperBowlActivity from './screens/ActivityScreen/SuperBowlActivity';
 import SuperBowlSurvey from './screens/SurveyScreen/SuperBowlSurvey';
 import SuperBowlMetrics from './screens/Metrics/SuperBowlMetrics';
+
 function App() {
   return (
     <Router>
