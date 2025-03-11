@@ -1,0 +1,87 @@
+.iconNameContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.allWorkshopContainer {
+    background-color: #1E1E1E;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    border: 1px solid #FAB81E;
+    box-sizing: border-box;
+
+}
+.workshopTitleText {
+    font-family: Inter;
+    color: #FFFFFF;
+    font-size: 30px;
+    text-align: left;
+    font-weight: 800;
+    margin: 0;
+    margin-left: 20px;
+}
+.pickText {
+    font-family: Inter;
+    color: rgba(219, 219, 219, 1);
+    font-size: 15px;
+    text-align: left;
+    line-height: 16px;
+
+}
+.workshopTime {
+    color: #FFE600;
+    font-family: Poppins;
+    font-size: 24px;
+    text-align: left;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.eachWorkshopContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 98%;
+}
+
+.eachWorkshopContainer:last-child {
+    border-bottom: none; 
+}
+
+.workshopNameText {
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-size: 16px;
+    text-align: left;
+    padding-right: 15px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.activityText {
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.keywordText {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.nameText {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+}
+
+.arrowIcon {
+
+}
